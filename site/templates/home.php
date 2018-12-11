@@ -1,7 +1,8 @@
-<?php 
+<?php
     $this->layout('template', [
-        'title' => 'Home', 
-        'id'=>$this->e($id)
-    ]); 
+        'title' => 'Home',
+        'public_id'=>$this->e($public_id)
+    ]);
 ?>
+
 Home

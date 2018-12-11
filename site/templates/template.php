@@ -70,7 +70,7 @@
 		      </li>
 		    </ul>
 
-				<graphjs-auth position="topright" box="disabled" height="56px"></graphjs-auth>
+				<graphjs-auth target="?page=profile&id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="46px" box="disabled"></graphjs-auth>
 				<!--
 		    <form class="form-inline my-2 my-md-0">
 		      <input class="form-control" type="text" placeholder="Search">
@@ -116,7 +116,7 @@
 		<script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 		<script>
-			GraphJS.init('<?=$this->e($id)?>', {
+			GraphJS.init('<?=$this->e($public_id)?>', {
 				//host: 'https://gjs-singlesignon.herokuapp.com',
 				theme: {
 					primaryColor: 'rgb(111, 135, 159)',

@@ -1,7 +1,8 @@
-<?php 
+<?php
     $this->layout('template', [
-        'title' => 'Groups', 
-        'id'=>$this->e($id)
-    ]); 
+        'title' => 'Groups',
+        'public_id'=>$this->e($public_id)
+    ]);
 ?>
-<graphjs-group-list box="disabled" target="/?page=group&id=[[id]]"></graphjs-group-list>
+
+<graphjs-group-list target="/?page=group&id=[[id]]" box="disabled"></graphjs-group-list>

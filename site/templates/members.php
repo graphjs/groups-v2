@@ -1,7 +1,8 @@
-<?php 
+<?php
     $this->layout('template', [
-        'title' => 'Members', 
-        'id'=>$this->e($id)
-    ]); 
+        'title' => 'Members',
+        'public_id'=>$this->e($public_id)
+    ]);
 ?>
-<graphjs-profile-list box="disabled" target="/?page=profile&id=[[id]]"></graphjs-profile-list>
+
+<graphjs-profile-list target="/?page=profile&id=[[id]]" box="disabled"></graphjs-profile-list>

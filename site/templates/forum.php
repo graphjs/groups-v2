@@ -1,7 +1,8 @@
-<?php 
+<?php
     $this->layout('template', [
-        'title' => 'Forum', 
-        'id'=>$this->e($id)
-    ]); 
+        'title' => 'Forum',
+        'public_id'=>$this->e($public_id)
+    ]);
 ?>
+
 <graphjs-forum box="disabled"></graphjs-forum>

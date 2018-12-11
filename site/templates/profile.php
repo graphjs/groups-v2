@@ -1,9 +1,10 @@
-<?php 
+<?php
     $this->layout('template', [
-        'title' => 'User Profile', 
-        'id'=>$this->e($id)
-    ]); 
+        'title' => 'Profile',
+        'public_id'=>$this->e($public_id)
+    ]);
 ?>
 
-<h1>User Profile</h1>
-<p>Hello, <?=$this->e($name)?></p>
+<?=$this->e($public_id)?>
+
+<graphjs-profile id="<?=$_GET["id"]?>" box="disabled"></graphjs-profile>
