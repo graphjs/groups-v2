@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(239, 243, 247);
+}
+
+.groups-navigation {
+  background-color: rgb(93, 60, 246);
+}
+
+.nav-underline .nav-link:hover {
+  color: rgb(158, 119, 255);
+}
+
+.groups-settings-button svg path {
+  fill: white;
+}
+
+.groups-footer {
+  background-color: white;
+}
