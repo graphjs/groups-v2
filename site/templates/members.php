@@ -4,5 +4,6 @@
         'public_id'=>$this->e($public_id)
     ]);
 ?>
-
-<graphjs-profile-list target="/?page=profile&id=[[id]]" box="disabled"></graphjs-profile-list>
+<main role="main" class="groups-content container">
+  <graphjs-profile-list target="/?page=profile&id=[[id]]" box="disabled"></graphjs-profile-list>
+</main>

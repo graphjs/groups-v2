@@ -5,4 +5,6 @@
     ]);
 ?>
 
-Home
+<main role="main" class="groups-content groups-box container">
+  Home
+</main>

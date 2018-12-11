@@ -4,5 +4,6 @@
         'public_id'=>$this->e($public_id)
     ]);
 ?>
-
-<graphjs-messages box="disabled"></graphjs-messages>
+<main role="main" class="groups-content container">
+  <graphjs-messages></graphjs-messages>
+</main>

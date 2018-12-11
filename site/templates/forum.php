@@ -5,4 +5,6 @@
     ]);
 ?>
 
-<graphjs-forum box="disabled"></graphjs-forum>
+<main role="main" class="groups-content container">
+  <graphjs-forum></graphjs-forum>
+</main>
