@@ -116,7 +116,7 @@
 		<script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 		<script>
-			GraphJS.init('79982844-6a27-4b3b-b77f-419a79be0e10', {
+			GraphJS.init('<?=$this->e($id)?>', {
 				//host: 'https://gjs-singlesignon.herokuapp.com',
 				theme: {
 					primaryColor: 'rgb(111, 135, 159)',
