@@ -57,7 +57,7 @@
 		        <a class="nav-link" href="/?page=forum">Forum</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="/?page=messages">Messages</a>
+		        <a class="nav-link" href="/?page=messages">Inbox</a>
 		      </li>
 		      <li class="nav-item dropdown">
 		        <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -102,7 +102,7 @@
 	      <div class="row">
 	        <div class="col-md-3 d-none d-md-block">
 	          <a class="groups-credit" href="#">
-							&copy; 2018 <span>G</span><span>R</span><span>O</span><span>U</span><span>.</span><span>P</span><span>S</span>, Inc.
+							powered by <span>G</span><span>R</span><span>O</span><span>U</span><span>.</span><span>P</span><span>S</span>
 						</a>
 	        </div>
 	        <div class="col-12 col-md-9 text-center text-md-left">
