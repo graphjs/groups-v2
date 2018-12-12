@@ -1,6 +1,7 @@
 <?php
     $this->layout('template', [
         'title' => 'Groups',
+        'brand'     => $this->e($brand),
         'public_id'=>$this->e($public_id)
     ]);
 ?>
