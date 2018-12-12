@@ -2,11 +2,11 @@
 
 require "vendor/autoload.php";
 
-$dir = __DIR__ . '/site/templates';
+$dir = __DIR__ . '/../site/templates';
 $templates = new League\Plates\Engine($dir);
 $id = '79982844-6a27-4b3b-b77f-419a79be0e10';
 
-mkdir(__DIR__. '/dist/' . $id);
+mkdir(__DIR__. '/../dist/' . $id);
 $files = scandir($dir);
 foreach($files as $file) 
 {
@@ -18,7 +18,7 @@ foreach($files as $file)
         $page = substr($file, 0, -4);
         $html = $page.'.html';
         file_put_contents(
-            __DIR__.'/dist/'.$id.'/'.$html,
+            __DIR__.'/../dist/'.$id.'/'.$html,
             $templates->render($page, ["id"=>$id])
         );
     }
