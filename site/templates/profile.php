@@ -1,7 +1,8 @@
 <?php
     $this->layout('template', [
-        'title' => 'Profile',
-        'public_id'=>$this->e($public_id)
+        'title'     => 'Profile',
+        'brand'     => $this->e($brand),
+        'public_id' => $this->e($public_id)
     ]);
 ?>
 <main role="main" class="groups-content container-fluid p-0 mt-0">
