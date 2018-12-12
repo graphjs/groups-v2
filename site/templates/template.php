@@ -66,8 +66,8 @@
 							</svg>
 						</a>
 		        <div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Account Settings</a>
-		          <a class="dropdown-item" href="#">Privacy Settings</a>
+							<a class="dropdown-item" href="/?page=account">Account Settings</a>
+		          <!--<a class="dropdown-item" href="#">Privacy Settings</a>-->
 		        </div>
 		      </li>
 		    </ul>
