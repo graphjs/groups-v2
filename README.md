@@ -2,14 +2,14 @@
 
 A simple static page generator for Grou.ps v2 sites.
 
-## Installation
+### Installation
 
 Install the PHP dependencies using Composer.
 
 ```composer install```
 
 
-## Usage
+### Usage
 
 To generate a Grou.ps site, type in:
 
