@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 
 $dir = __DIR__ . '/../site/templates';
 $templates = new League\Plates\Engine($dir);
