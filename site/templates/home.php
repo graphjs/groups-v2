@@ -11,6 +11,16 @@
     ]);
 ?>
 
-<main role="main" class="groups-content groups-box container">
-  Home
+<main role="main" class="groups-content container">
+  <div class="row">
+    <section class="col-md-12 col-lg-8">
+      <graphjs-feed></graphjs-feed>
+    </section>
+    <aside class="d-none d-lg-block col-lg-4">
+      <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
+      <div>
+
+      </div>
+    </aside>
+  </div>
 </main>
