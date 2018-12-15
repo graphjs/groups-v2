@@ -1,4 +1,4 @@
-<?php $this->layout('layout/base') ?>
+<?php $this->layout('layout/base', $this->data) ?>
 
 <?= $this->section('content') ?>
 

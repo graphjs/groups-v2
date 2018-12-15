@@ -1,5 +1,5 @@
 <?php
-    $this->layout('template_'.$this->e($goal), [
+    $this->layout('layout/template_'.$this->e($goal), [
         'title' => 'Home',
         'brand'     => $this->e($brand),
         'public_id'=>$this->e($public_id),

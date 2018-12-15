@@ -67,7 +67,9 @@ $stream_host = "";
 /// defaults
 
 $site = __DIR__. '/../dist/' . $name;
-mkdir($site);
+if (! file_exists($site)) {
+    mkdir($site);
+}
 $files = scandir($dir);
 foreach($files as $file) 
 {
