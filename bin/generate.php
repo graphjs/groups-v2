@@ -56,6 +56,16 @@ $name = $cmd[0];
 $title = $cmd[1];
 $id = $cmd["id"];
 
+/// defaults
+$goal = "generate";
+$public_id = '79982844-6a27-4b3b-b77f-419a79be0e10';
+$primary_color = 'rgb(111, 135, 159)';
+$text_color = 'rgb(63, 95, 127)';
+$background_color = 'white';
+$host = "";
+$stream_host = "";
+/// defaults
+
 $site = __DIR__. '/../dist/' . $name;
 mkdir($site);
 $files = scandir($dir);
@@ -71,8 +81,14 @@ foreach($files as $file)
         file_put_contents(
             $site.'/'.$html,
             $templates->render($page, [
-                "public_id"=>$id,
-                "brand"=>$title
+                "goal"=>$goal,
+                "public_id"=>$public_id,
+                "brand"=>$title,
+                "primaryColor"     => $primary_color,
+                "textColor"        => $text_color,
+                "backgroundColor"  => $background_color,
+                "host"             => $host,
+                "streamHost"       => $stream_host
             ])
         );
     }
