@@ -22,9 +22,9 @@ return function(
         %s
         %s
         theme: {
-            primaryColor: %s,
-            textColor: %s,
-            backgroundColor: %s
+            primaryColor: '%s',
+            textColor: '%s',
+            backgroundColor: '%s'
         }
     });
 EOS;

@@ -95,3 +95,11 @@ foreach($files as $file)
         );
     }
 }
+
+$init = include __DIR__ . '/../lib/init.php';
+$initOutput = $init($public_id, $primary_color, $text_color, $background_color, $host, $stream_host);
+
+$packer = new \Tholu\Packer\Packer($initOutput, 'Normal', true, false, true);
+$packed = $packer->pack();
+$jsFilePath = $site.'/'.'init.js';
+file_put_contents($jsFilePath, $packed);
