@@ -117,14 +117,16 @@
 		<script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
 		<script type="text/javascript" src="/site/vendor/popper/popper.min.js"></script>
 		<script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
+		<script type="text/javascript" src="site/vendor/graphjs/graph.js"></script>
 		<script>
 			GraphJS.init('<?=$this->e($public_id)?>', {
-				//host: 'https://gjs-singlesignon.herokuapp.com',
+				host: '<?=$this->e($host)?>',
+				streamHost: '<?=$this->e($stream_host)?>',
+				streamId: '<?=$this->e($public_id)?>',
 				theme: {
-					primaryColor: 'rgb(111, 135, 159)',
-					textColor: 'rgb(63, 95, 127)',
-					backgroundColor: 'white'
+					primaryColor: '<?=$this->e($primary_color)?>',
+					textColor: '<?=$this->e($text_color)?>',
+					backgroundColor: '<?=$this->e($background_color)?>'
 				}
 			});
 		</script>
