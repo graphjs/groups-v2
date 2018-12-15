@@ -21,3 +21,7 @@ To generate a Grou.ps site, type in:
 bin/generate.php {group_name} {public_graphjs_id} {group_title}
 ```
 
+### License
+
+MIT, see [LICENSE](https://github.com/phonetworks/pho-microkernel/blob/master/LICENSE).
+
