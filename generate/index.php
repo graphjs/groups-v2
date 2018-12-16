@@ -8,6 +8,9 @@ $pathInfo = $_SERVER['PATH_INFO'] ?? null;
 $rootPath = dirname(__DIR__);
 $dir = $rootPath . '/site/templates';
 
+$dotenv = new \Dotenv\Dotenv($rootPath);
+$dotenv->load();
+
 $name = $_REQUEST['name'] ?? null;
 $title = $_REQUEST['title'] ?? null;
 $public_id = $_REQUEST['public_id'] ?? null;
