@@ -93,6 +93,7 @@ class FileGeneration
 
         $packer = new \Tholu\Packer\Packer($initOutput, 'Normal', true, false, true);
         $packed = $packer->pack();
+        $packed = $initOutput;
         $jsFilePath = $site.'/'.'init.js';
         file_put_contents($jsFilePath, $packed);
     }
