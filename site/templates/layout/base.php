@@ -102,15 +102,19 @@
         <div class="row">
             <div class="col-md-3 d-none d-md-block">
                 <a class="groups-credit" href="#">
-                    powered by <span>G</span><span>R</span><span>O</span><span>U</span><span>.</span><span>P</span><span>S</span>
+                    Powered by Grou.ps
                 </a>
             </div>
+            <!--
             <div class="col-12 col-md-9 text-center text-md-left">
                 <a class="text-muted" href="#">About</a>
                 <a class="text-muted" href="#">Privacy</a>
                 <a class="text-muted" href="#">Terms</a>
-                <a class="text-muted" href="#">Create your own</a>
+                <a class="text-muted" href="https://grou.ps/setup">Create your own</a>
             </div>
+            -->
+            <a class="groups-rainbow static" href="https://grou.ps">🌈</a>
+  					<div class="groups-rainbow">🌈</div>
         </div>
     </div>
 </footer>

@@ -89,3 +89,31 @@
 .groups-footer .groups-credit span:nth-child(7) {
   color: #da5f7b;
 }
+
+.groups-footer .groups-rainbow {
+  display: inline;
+  z-index: 1;
+  opacity: .5;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  margin-bottom: -.075em;
+  margin-right: -.025em;
+  font-size: 2.5em;
+  line-height: 1em;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0s ease;
+}
+
+.groups-footer .groups-rainbow.static {
+  z-index: 2;
+  opacity: 1;
+}
+
+.groups-footer .groups-rainbow.static:hover + .groups-rainbow {
+  opacity: 0;
+  font-size: 12.5em;
+  transition: all .5s ease-in-out;
+}
