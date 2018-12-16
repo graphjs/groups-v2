@@ -9,7 +9,8 @@
         'host' => $this->e($host),
         'stream_host' => $this->e($streamHost),
         "theme" => $this->e($theme),
-        "name"  => $this->e($name)
+        "name"  => $this->e($name),
+        "goal" => $this->e($goal)
     ]);
 ?>
 
