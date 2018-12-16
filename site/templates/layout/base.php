@@ -66,6 +66,7 @@
             <script>
                 GraphJS.on("afterLogin", function() {
                     //if(response!=false)  {
+                        console.log("is logged in");
                         document.write('
                         <li class="nav-item dropdown">
                                 <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -79,6 +80,7 @@
                                 </div>
                             </li>
                         ');
+                        console.log("must run");
                    // }
                 });
             </script>
