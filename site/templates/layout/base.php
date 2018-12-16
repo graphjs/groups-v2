@@ -105,12 +105,9 @@
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <script>
     jQuery(document).ready(function($){
-        console.log("doc ready");
         window.setTimeout(function() {
             GraphJS.getSession(function(response) {
-                console.log("session taken");
                 if(response!=false) {
-                    console.log("Removing");
                     $("#private-features").removeClass("d-none");
                 }
             })
