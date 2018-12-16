@@ -12,6 +12,7 @@ if ($requestMethod === 'POST' && $pathInfo === '/generate') {
     $dir = $rootPath . '/site/templates';
     $name = $_POST['name'] ?? null;
     $title = $_POST['title'] ?? null;
+    $public_id = $_POST['public_id'] ?? null;
 
     if (! $name || ! $title) {
         header('Content-Type: application/json');
@@ -22,7 +23,7 @@ if ($requestMethod === 'POST' && $pathInfo === '/generate') {
         exit;
     }
 
-    (new FileGeneration($dir, $name, $title))->generate();
+    (new FileGeneration($dir, $name, $title, $public_id))->generate();
 
     header('Content-Type: application/json');
     echo json_encode([

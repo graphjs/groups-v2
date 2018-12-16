@@ -7,7 +7,8 @@
         'text_color' => $this->e($textColor),
         'background_color' => $this->e($backgroundColor),
         'host' => $this->e($host),
-        'stream_host' => $this->e($streamHost)
+        'stream_host' => $this->e($streamHost),
+        "theme" => $this->e($theme)
     ]);
 ?>
 

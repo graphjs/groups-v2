@@ -53,6 +53,10 @@ $cmd->option('b')
     ->aka('background_color')
     ->describedAs('Background Color');
 
+$cmd->option('t')
+    ->aka('theme')
+    ->describedAs('Theme (light or dark)');
+
 $name = $cmd[0];
 $title = $cmd[1];
 $id = $cmd["id"];

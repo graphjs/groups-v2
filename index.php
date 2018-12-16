@@ -12,6 +12,7 @@ $text_color = 'rgb(63, 95, 127)';
 $background_color = 'white';
 $host = "https://gjd5dc9d34449d9ab5f34a2c4246f2.herokuapp.com/";
 $stream_host = "";
+$theme = "light";
 
 echo $templates->render($_GET["page"], [
         "goal"             => $goal,
@@ -21,6 +22,7 @@ echo $templates->render($_GET["page"], [
         "textColor"        => $text_color,
         "backgroundColor"  => $background_color,
         "host"             => $host,
+        "theme"            => $theme,
         "streamHost"       => $stream_host
     ]
 );

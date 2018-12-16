@@ -22,7 +22,7 @@
     <!-- Overwrite (You can overwrite any CSS rule here.) -->
     <link rel="stylesheet" type="text/css" href="/site/styles/overwrite.css" />
 </head>
-<body>
+<body class="$this->e($theme)">
 <!-- Navigation -->
 <nav class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
     <a class="navbar-brand d-none d-md-block" href="#">
