@@ -1,4 +1,4 @@
-<?php
+g<?php
 
 require __DIR__ . "/../vendor/autoload.php";
 include __DIR__ . '/../lib/FileGeneration.php';
@@ -17,13 +17,22 @@ $background_color = $_REQUEST['background_color'] ?? null;
 $primary_color = $_REQUEST['primary_color'] ?? null;
 $host = $_REQUEST['host'] ?? null;
 $stream_host = $_REQUEST['stream_host'] ?? null;
-    
+$secret = $_REQUEST['secret'] ?? null;
 
     if (! $name || ! $title || !$public_id) {
         header('Content-Type: application/json');
         echo json_encode([
             'success' => false,
             'message' => 'name and title are required',
+        ]);
+        exit;
+    }
+
+    if(md5($name.getenv("SALT"))!=$secret) {
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => false,
+            'message' => 'not authorized',
         ]);
         exit;
     }
