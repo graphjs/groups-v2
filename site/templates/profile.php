@@ -8,14 +8,12 @@
         'background_color' => $this->e($backgroundColor),
         'host' => $this->e($host),
         'stream_host' => $this->e($streamHost),
-        "theme" => $this->e($theme),
-        "name"  => $this->e($name),
-        "goal" => $this->e($goal)
+        "theme" => $this->e($theme)
     ]);
 ?>
 
 <main role="main" class="groups-content container-fluid p-0 mt-0">
-  <graphjs-profile data-reference="profile" id="" box="disabled"></graphjs-profile>
+  <graphjs-profile data-reference="profile" box="disabled"></graphjs-profile>
 </main>
 <script>
     addAttributes('profile', [
