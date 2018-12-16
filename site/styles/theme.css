@@ -1,3 +1,5 @@
+/* Default */
+
 body {
   background-color: rgb(247, 249, 251);
 }
@@ -21,4 +23,14 @@ body {
 .groups-box {
   background-color: white;
   box-shadow: 0 0 1rem rgba(0, 0, 0, .035);
+}
+
+/* Dark */
+
+body.dark {
+  background-color: rgb(47, 47, 47);
+}
+
+body.dark .groups-footer {
+  background-color: rgb(31, 31, 31);
 }

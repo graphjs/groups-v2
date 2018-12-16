@@ -7,7 +7,3 @@ Overwrite any CSS rule here.
 graphjs-promo {
   display: none !important;
 }
-
-graphjs-auth {
-  margin: 8px 0;
-}

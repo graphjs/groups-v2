@@ -28,7 +28,7 @@
 </head>
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->
-<nav class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
+<nav style="background-color: #123456" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
     <a class="navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
         <!--
             You can replace this SVG with your logo.
@@ -76,7 +76,7 @@
             </li>
         </ul>
 
-        <graphjs-auth target="<?php if($goal==="show"): ?>/?page=profile<?php else: ?>/<?=$name?>/profile?<?php endif ?>&id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="46px" box="disabled"></graphjs-auth>
+        <graphjs-auth target="<?php if($goal==="show"): ?>/?page=profile<?php else: ?>/<?=$name?>/profile?<?php endif ?>&id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
         <!--
     <form class="form-inline my-2 my-md-0">
       <input class="form-control" type="text" placeholder="Search">
