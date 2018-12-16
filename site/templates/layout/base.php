@@ -49,16 +49,16 @@
                 <a class="nav-link" href="/?page=home">Home</a>
             </li>
             <li class="nav-item<?php if($title==="Members"): ?> active<?php endif ?>">
-                <a class="nav-link" href="/?page=members">Members</a>
+                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=members<?php else: ?>/<?=$name?>/members<?php endif ?>">Members</a>
             </li>
             <li class="nav-item<?php if($title==="Groups"): ?> active<?php endif ?>">
-                <a class="nav-link" href="/?page=groups">Groups</a>
+                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=groups<?php else: ?>/<?=$name?>/groups<?php endif ?>">Groups</a>
             </li>
             <li class="nav-item<?php if($title==="Forum"): ?> active<?php endif ?>">
-                <a class="nav-link" href="/?page=forum">Forum</a>
+                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=forum<?php else: ?>/<?=$name?>/forum<?php endif ?>">Forum</a>
             </li>
             <li class="nav-item<?php if($title==="Messages"): ?> active<?php endif ?>">
-                <a class="nav-link" href="/?page=messages">Inbox</a>
+                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=messages<?php else: ?>/<?=$name?>/messages<?php endif ?>">Inbox</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -67,13 +67,13 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/?page=account">Account Settings</a>
+                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=account<?php else: ?>/<?=$name?>/account<?php endif ?>">Account Settings</a>
                     <!--<a class="dropdown-item" href="#">Privacy Settings</a>-->
                 </div>
             </li>
         </ul>
 
-        <graphjs-auth target="?page=profile&id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="46px" box="disabled"></graphjs-auth>
+        <graphjs-auth target="<?php if($goal==="show"): ?>/?page=profile<?php else: ?>/<?=$name?>/profile?<?php endif ?>&id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="46px" box="disabled"></graphjs-auth>
         <!--
     <form class="form-inline my-2 my-md-0">
       <input class="form-control" type="text" placeholder="Search">
