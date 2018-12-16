@@ -45,19 +45,19 @@
     <div id="collapse-menu" class="collapse navbar-collapse">
         <!-- Menu -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item<?=$_GET["page"]==="home"?" active":""?>">
+            <li class="nav-item<?php if($title==="Home"): ?> active<?php endif ?>">
                 <a class="nav-link" href="/?page=home">Home</a>
             </li>
-            <li class="nav-item<?=$_GET["page"]==="members"?" active":""?>">
+            <li class="nav-item<?php if($title==="Members"): ?> active<?php endif ?>">
                 <a class="nav-link" href="/?page=members">Members</a>
             </li>
-            <li class="nav-item<?=$_GET["page"]==="groups"?" active":""?>">
+            <li class="nav-item<?php if($title==="Groups"): ?> active<?php endif ?>">
                 <a class="nav-link" href="/?page=groups">Groups</a>
             </li>
-            <li class="nav-item<?=$_GET["page"]==="forum"?" active":""?>">
+            <li class="nav-item<?php if($title==="Forum"): ?> active<?php endif ?>">
                 <a class="nav-link" href="/?page=forum">Forum</a>
             </li>
-            <li class="nav-item<?=$_GET["page"]==="messages"?" active":""?>">
+            <li class="nav-item<?php if($title==="Messages"): ?> active<?php endif ?>">
                 <a class="nav-link" href="/?page=messages">Inbox</a>
             </li>
             <li class="nav-item dropdown">
@@ -122,7 +122,7 @@
 <script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="/site/vendor/popper/popper.min.js"></script>
 <script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="site/vendor/graphjs/graph.js"></script>
+<script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <?=$this->section('footer')?>
 <?php /* ?><script>
     GraphJS.init('<?=$this->e($public_id)?>', {
