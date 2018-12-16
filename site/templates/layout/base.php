@@ -71,7 +71,6 @@
                             console.log("must run");
                     }), 2000);
                 });
-                GraphJS.on("afterLogin", 
             </script>
         </ul>
 
