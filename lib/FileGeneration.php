@@ -85,6 +85,8 @@ class FileGeneration
                 );
             }
         }
+        // homepage
+        copy($site.'/home.html', $site.'.html');
 
         $init = include __DIR__ . '/../lib/init.php';
         $initOutput = $init($public_id, $primary_color, $text_color, $background_color, $host, $stream_host);
