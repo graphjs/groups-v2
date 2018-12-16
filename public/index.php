@@ -6,15 +6,20 @@ include __DIR__ . '/../lib/FileGeneration.php';
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 $pathInfo = $_SERVER['PATH_INFO'] ?? null;
 $rootPath = dirname(__DIR__);
+$dir = $rootPath . '/site/templates';
 
-if ($requestMethod === 'POST' && $pathInfo === '/generate') {
+$name = $_REQUEST['name'] ?? null;
+$title = $_REQUEST['title'] ?? null;
+$public_id = $_REQUEST['public_id'] ?? null;
+$theme = $_REQUEST['theme'] ?? "light";
+$text_color = $_REQUEST['text_color'] ?? null;
+$background_color = $_REQUEST['background_color'] ?? null;
+$primary_color = $_REQUEST['primary_color'] ?? null;
+$host = $_REQUEST['host'] ?? null;
+$stream_host = $_REQUEST['stream_host'] ?? null;
+    
 
-    $dir = $rootPath . '/site/templates';
-    $name = $_POST['name'] ?? null;
-    $title = $_POST['title'] ?? null;
-    $public_id = $_POST['public_id'] ?? null;
-
-    if (! $name || ! $title) {
+    if (! $name || ! $title || !$public_id) {
         header('Content-Type: application/json');
         echo json_encode([
             'success' => false,
@@ -23,7 +28,7 @@ if ($requestMethod === 'POST' && $pathInfo === '/generate') {
         exit;
     }
 
-    (new FileGeneration($dir, $name, $title, $public_id))->generate();
+    (new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host))->generate();
 
     header('Content-Type: application/json');
     echo json_encode([
@@ -31,11 +36,4 @@ if ($requestMethod === 'POST' && $pathInfo === '/generate') {
         'message' => 'Generated',
     ]);
     exit;
-}
 
-http_response_code(400);
-header('Content-Type: application/json');
-echo json_encode([
-    'success' => false,
-    'message' => 'Bad Request',
-]);
