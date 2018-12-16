@@ -107,7 +107,7 @@
     jQuery(document).ready(function($){
         window.setTimeout(function() {
             GraphJS.getSession(function(response) {
-                if(response!=false) {
+                if(response.success!=false) {
                     $(".private-features").removeClass("d-none");
                 }
                 else {
