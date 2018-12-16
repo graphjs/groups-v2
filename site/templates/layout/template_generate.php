@@ -4,6 +4,6 @@
 
 <?php $this->start('footer') ?>
 
-<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="/dist/<?=$name?>/init.js"></script>
 
 <?php $this->stop('footer') ?>

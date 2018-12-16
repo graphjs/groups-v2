@@ -121,7 +121,7 @@
 <script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="/site/vendor/popper/popper.min.js"></script>
 <script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="site/vendor/graphjs/graph.js"></script>
+<script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <?=$this->section('footer')?>
 <?php /* ?><script>
     GraphJS.init('<?=$this->e($public_id)?>', {

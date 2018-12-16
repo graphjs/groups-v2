@@ -79,7 +79,8 @@ class FileGeneration
                         "backgroundColor"  => $background_color,
                         "host"             => $host,
                         "streamHost"       => $stream_host,
-                        "theme"            => $theme
+                        "theme"            => $theme,
+                        "name"             => $name
                     ])
                 );
             }
