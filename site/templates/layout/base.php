@@ -71,6 +71,7 @@
                  </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=account<?php else: ?>/<?=$name?>/account<?php endif ?>">Account Settings</a>
+                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=create-group<?php else: ?>/<?=$name?>/create-group<?php endif ?>">Create Group</a>
                     <!--<a class="dropdown-item" href="#">Privacy Settings</a>-->
                 </div>
             </li>
