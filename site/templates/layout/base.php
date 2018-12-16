@@ -10,6 +10,7 @@
     <meta itemprop="name" content="Grou.ps v2">
     <meta itemprop="description" content="Grou.ps v2">
     <title><?=$this->e($title)?> | Grou.ps</title>
+    <script type="text/javascript" src="/site/scripts/client.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-offcanvas.css" />
