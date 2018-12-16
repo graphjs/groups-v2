@@ -8,7 +8,9 @@
         'background_color' => $this->e($backgroundColor),
         'host' => $this->e($host),
         'stream_host' => $this->e($streamHost),
-        "theme" => $this->e($theme)
+        "theme" => $this->e($theme),
+        "name"  => $this->e($name),
+        "goal" => $this->e($goal)
     ]);
 ?>
 
