@@ -1,8 +1,8 @@
 <?php
     $this->layout('layout/template_'.$this->e($goal), [
-        'title' => 'Members',
+        'title'     => 'Create Group',
         'brand'     => $this->e($brand),
-        'public_id'=>$this->e($public_id),
+        'public_id' =>$this->e($public_id),
         'primary_color' => $this->e($primaryColor),
         'text_color' => $this->e($textColor),
         'background_color' => $this->e($backgroundColor),
@@ -14,6 +14,6 @@
     ]);
 ?>
 
-<main role="main" class="groups-content container">
-  <graphjs-profile-list target="?page=profile&id=[[id]]" box="disabled"></graphjs-profile-list>
+<main role="main" class="groups-content container-fluid">
+  <graphjs-group-creator style="margin: 0 auto;" target="?page=group&id=[[id]]" box="disabled"></graphjs-group-creator>
 </main>
