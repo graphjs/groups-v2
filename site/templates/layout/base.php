@@ -11,7 +11,8 @@
     <meta itemprop="description" content="Grou.ps v2">
     <title><?=$this->e($title)?> | Grou.ps</title>
     <script type="text/javascript" src="/site/scripts/client.js"></script>
-    
+    <script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-offcanvas.css" />
@@ -26,8 +27,6 @@
     <!-- Icons -->
 		<link rel="icon" type="image/png" href="/app/images/identity/icon.png">
         <link rel="apple-touch-icon" href="/app/images/identity/icon-touch.png">
-        
-    <script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
 </head>
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->
