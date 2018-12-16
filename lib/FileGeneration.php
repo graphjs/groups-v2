@@ -5,12 +5,32 @@ class FileGeneration
     private $dir;
     private $name;
     private $title;
+    private $public_id;
+    private $primary_color;
+    private $text_color;
+    private $background_color;
+    private $host;
+    private $stream_host;
 
-    public function __construct($dir, $name, $title)
+    public function __construct(
+        $dir, $name, $title, 
+        $public_id='79982844-6a27-4b3b-b77f-419a79be0e10', 
+        $primary_color='rgb(111, 135, 159)', 
+        $text_color = 'rgb(63, 95, 127)',
+        $background_color = 'white',
+        $host = "",
+        $stream_host = ""
+    )
     {
         $this->dir = $dir;
         $this->name = $name;
         $this->title = $title;
+        $this->public_id = $public_id;
+        $this->primary_color = $primary_color;
+        $this->text_color = $text_color;
+        $this->background_color = $background_color;
+        $this->host = $host;
+        $this->stream_host = $stream_host;
     }
 
     public function generate()
@@ -18,16 +38,17 @@ class FileGeneration
         $dir = $this->dir;
         $name = $this->name;
         $title = $this->title;
+        $public_id = $this->public_id;
+        $primary_color = $this->primary_color;
+        $text_color = $this->text_color;
+        $background_color = $this->background_color;
+        $host = $this->host;
+        $stream_host = $this->stream_host;
+
         $templates = new League\Plates\Engine($dir);
 
         /// defaults
         $goal = "generate";
-        $public_id = '79982844-6a27-4b3b-b77f-419a79be0e10';
-        $primary_color = 'rgb(111, 135, 159)';
-        $text_color = 'rgb(63, 95, 127)';
-        $background_color = 'white';
-        $host = "";
-        $stream_host = "";
         /// defaults
 
         $site = __DIR__. '/../dist/' . $name;
