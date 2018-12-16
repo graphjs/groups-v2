@@ -44,19 +44,19 @@
     <div id="collapse-menu" class="collapse navbar-collapse">
         <!-- Menu -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item<?=$_GET["page"]==="home"?" active":""?>">
                 <a class="nav-link" href="/?page=home">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item<?=$_GET["page"]==="members"?" active":""?>">
                 <a class="nav-link" href="/?page=members">Members</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item<?=$_GET["page"]==="groups"?" active":""?>">
                 <a class="nav-link" href="/?page=groups">Groups</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item<?=$_GET["page"]==="forum"?" active":""?>">
                 <a class="nav-link" href="/?page=forum">Forum</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item<?=$_GET["page"]==="messages"?" active":""?>">
                 <a class="nav-link" href="/?page=messages">Inbox</a>
             </li>
             <li class="nav-item dropdown">
