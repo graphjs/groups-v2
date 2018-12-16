@@ -64,8 +64,8 @@
                 <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=messages<?php else: ?>/<?=$name?>/messages<?php endif ?>">Inbox</a>
             </li>
             <script>
-                GraphJS.getSession(function(response) {
-                    if(response!=false)  {
+                GraphJS.on("afterLogin", function() {
+                    //if(response!=false)  {
                         document.write('
                         <li class="nav-item dropdown">
                                 <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -79,7 +79,7 @@
                                 </div>
                             </li>
                         ');
-                    }
+                   // }
                 });
             </script>
         </ul>
