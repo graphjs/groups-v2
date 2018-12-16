@@ -11,6 +11,7 @@
     <meta itemprop="description" content="Grou.ps v2">
     <title><?=$this->e($title)?> | Grou.ps</title>
     <script type="text/javascript" src="/site/scripts/client.js"></script>
+    
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-offcanvas.css" />
@@ -24,7 +25,9 @@
     <link rel="stylesheet" type="text/css" href="/site/styles/overwrite.css" />
     <!-- Icons -->
 		<link rel="icon" type="image/png" href="/app/images/identity/icon.png">
-		<link rel="apple-touch-icon" href="/app/images/identity/icon-touch.png">
+        <link rel="apple-touch-icon" href="/app/images/identity/icon-touch.png">
+        
+    <script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
 </head>
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->
@@ -123,7 +126,7 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="/site/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
+
 <script type="text/javascript" src="/site/vendor/popper/popper.min.js"></script>
 <script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
