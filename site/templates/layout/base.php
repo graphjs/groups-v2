@@ -28,7 +28,7 @@
 </head>
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->
-<nav style="background-color: #<?=$this->e($primary_color)?>" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
+<nav style="background-color: <?=$this->e($primary_color)?>" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
     <a class="navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
         <!--
             You can replace this SVG with your logo.
