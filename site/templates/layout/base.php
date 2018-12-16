@@ -26,7 +26,7 @@
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->
 <nav class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
-    <a class="navbar-brand d-none d-md-block" href="/?page=home">
+    <a class="navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
         <!--
             You can replace this SVG with your logo.
             · Any text or image is okay to use.
@@ -46,7 +46,7 @@
         <!-- Menu -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item<?php if($title==="Home"): ?> active<?php endif ?>">
-                <a class="nav-link" href="/?page=home">Home</a>
+                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">Home</a>
             </li>
             <li class="nav-item<?php if($title==="Members"): ?> active<?php endif ?>">
                 <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=members<?php else: ?>/<?=$name?>/members<?php endif ?>">Members</a>
