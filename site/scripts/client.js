@@ -1,3 +1,14 @@
+var checkLogin = function() {
+    window.GraphJS.getSession(function(response) {
+        if(response.success) {
+            document.body.classList.add('logged');
+        }
+        else {
+            document.body.classList.remove('logged');
+        }
+    });
+}
+
 var getParameters = function(parameter) {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace(

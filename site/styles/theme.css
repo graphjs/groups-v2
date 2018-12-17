@@ -22,7 +22,12 @@ body {
 
 .groups-box {
   background-color: white;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .035);
+}
+
+.groups-box > .title {
+  color: rgb(111, 135, 159);
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  background-color: rgba(0, 0, 0, .025);
 }
 
 /* Dark */
@@ -33,4 +38,14 @@ body.dark {
 
 body.dark .groups-footer {
   background-color: rgb(31, 31, 31);
+}
+
+body.dark .groups-box {
+  background-color: rgb(71, 71, 71);
+}
+
+body.dark .groups-box > .title {
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, .075);
 }

@@ -1,8 +1,21 @@
 /* MODEL: Box */
 
 .groups-box {
-  border-radius: 5px;
+  overflow: hidden;
   padding: 0;
+  border: 1px solid rgba(0, 0, 0, .075);
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .05), 0 .15em .1em 0 rgba(0, 0, 0, .075);
+  transition: box-shadow .35s ease;
+  border-radius: 9px;
+}
+
+.groups-box:hover {
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .1), 0 .15em .1em 0 rgba(0, 0, 0, .1);
+}
+
+.groups-box > .title {
+  margin: 0;
+  padding: .5em 0;
 }
 
 /* LAYOUT: Navigation */
@@ -105,4 +118,28 @@
   opacity: 0;
   font-size: 12.5em;
   transition: all .5s ease-in-out;
+}
+
+/* COMPONENT: Invitation */
+
+.groups-invitation {
+  text-align: center;
+}
+
+.groups-invitation > .title + * {
+  padding: 1.35em 0 1.2em 0;
+}
+
+/* OPTION: Public/Private Feature */
+
+.private-feature {
+  display: none;
+}
+
+body.logged .private-feature {
+  display: block;
+}
+
+body.logged .public-feature {
+  display: none;
 }
