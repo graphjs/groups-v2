@@ -15,5 +15,5 @@
 ?>
 
 <main role="main" class="groups-content container">
-  <graphjs-profile-list target="?page=profile&id=[[id]]" box="disabled"></graphjs-profile-list>
+  <graphjs-profile-list target="<?php if($goal==="show"): ?>/?page=profile&id=[[id]]<?php else: ?>/<?=$name?>/profile?id=[[id]]<?php endif ?>" box="disabled"></graphjs-profile-list>
 </main>
