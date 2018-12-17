@@ -23,8 +23,8 @@
     <!-- Overwrite (You can overwrite any CSS rule here.) -->
     <link rel="stylesheet" type="text/css" href="/site/styles/overwrite.css" />
     <!-- Icons -->
-		<link rel="icon" type="image/png" href="/app/images/identity/icon.png">
-		<link rel="apple-touch-icon" href="/app/images/identity/icon-touch.png">
+		<link rel="icon" type="image/png" href="/site/images/identity/icon.png">
+		<link rel="apple-touch-icon" href="/site/images/identity/icon-touch.png">
 </head>
 <body class="<?=$this->e($theme)?>">
 <!-- Navigation -->

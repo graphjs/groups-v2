@@ -24,7 +24,7 @@
            <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
       </div>
       <div class="groups-invitation groups-box private-feature">
-        <div class="title">Invite people to your group</div>
+        <div class="title">Invite people to this group</div>
         <div class="addthis_inline_share_toolbox"></div>
         <!--
         <a href="https://www.addtoany.com/share#url=https%3A%2F%2Fgr.ps&amp;title=" target="_blank"><img src="https://static.addtoany.com/buttons/a2a.svg" width="32" height="32" style="background-color:royalblue"></a>
