@@ -115,6 +115,18 @@
                         $(".register-box").removeClass("d-none");
                     <?php endif ?>
                 }
+            });
+            GraphJS.on("afterLogin", function() {
+                $(".private-features").removeClass("d-none");
+                <?php if($title=="Home"): ?>
+                        $(".register-box").addClass("d-none");
+                <?php endif ?>
+            });
+            GraphJS.on("afterLogout", function() {
+                $(".private-features").addClass("d-none");
+                <?php if($title=="Home"): ?>
+                        $(".register-box").removeClass("d-none");
+                <?php endif ?>
             })
         }, 3000);
     });
