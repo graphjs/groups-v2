@@ -105,16 +105,15 @@
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <script>
     window.onload = function() {
-      checkLogin();
+        checkLogin();
+        window.GraphJS.on("afterLogin", function() {
+            checkLogin();
+        });
+
+        window.GraphJS.on("afterLogout", function() {
+            checkLogin();
+        });
     }
-
-    window.GraphJS.on("afterLogin", function() {
-        checkLogin();
-    });
-
-    window.GraphJS.on("afterLogout", function() {
-        checkLogin();
-    });
 </script>
 <?=$this->section('footer')?>
 </body>
