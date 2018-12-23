@@ -6,11 +6,11 @@ $init = include(__DIR__ . "/lib/init.php");
 $templates = new League\Plates\Engine(__DIR__ . '/site/templates');
 
 $goal = "show";
-$public_id = '3D90D5DC-9D34-449D-9AB5-F34A2C4246F2';
-$primary_color = 'rgb(111, 135, 159)';
-$text_color = 'rgb(63, 95, 127)';
-$background_color = 'white';
-$host = "https://gjd5dc9d34449d9ab5f34a2c4246f2.herokuapp.com/";
+$public_id = '393CD160-2F38-4A7E-BF5A-FA0657FD649C';
+$primary_color = '#6f879f';
+$text_color = '#3f5f7f';
+$background_color = '#ffffff';
+$host = "https://gjd1602f384a7ebf5afa0657fd649c.herokuapp.com/";
 $stream_host = "";
 $theme = "light";
 

@@ -4,6 +4,15 @@ Overwrite any CSS rule here.
 
 */
 
+/* GraphJS */
+
 graphjs-promo {
   display: none !important;
+}
+
+/* Bootstrap */
+
+.input-group-text {
+  border: 1px solid rgba(0, 0, 0, .15);
+  background-color: rgba(0, 0, 0, .05);
 }

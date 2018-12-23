@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-sticky-footer.css" />
     <!-- Site layout & essentials -->
     <link rel="stylesheet" type="text/css" href="/site/styles/site.css" />
+    <!-- User Interface components -->
+    <link rel="stylesheet" type="text/css" href="/site/styles/interface.css" />
     <!-- Theme (You can customize this file as you please.) -->
     <link rel="stylesheet" type="text/css" href="/site/styles/theme.css" />
     <!-- Overwrite (You can overwrite any CSS rule here.) -->
@@ -26,10 +28,10 @@
 		<link rel="icon" type="image/png" href="/site/images/identity/icon.png">
 		<link rel="apple-touch-icon" href="/site/images/identity/icon-touch.png">
 </head>
-<body class="<?=$this->e($theme)?>">
+<body class="<?=$this->e($theme)?>" style="color: <?=$this->e($text_color)?>">
 <!-- Navigation -->
 <nav style="background-color: <?=$this->e($primary_color)?>" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
-    <a class="navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
+    <a class="groups-brand navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
         <!--
             You can replace this SVG with your logo.
             · Any text or image is okay to use.
@@ -70,6 +72,7 @@
                     </svg>
                  </a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=settings<?php else: ?>/<?=$name?>/account<?php endif ?>">General Settings</a>
                     <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=account<?php else: ?>/<?=$name?>/account<?php endif ?>">Account Settings</a>
                     <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=create-group<?php else: ?>/<?=$name?>/create-group<?php endif ?>">Create Group</a>
                     <!--<a class="dropdown-item" href="#">Privacy Settings</a>-->
@@ -105,6 +108,7 @@
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <script>
     window.onload = function() {
+        // Login
         checkLogin();
         window.GraphJS.on("afterLogin", function() {
             checkLogin();
@@ -113,6 +117,8 @@
         window.GraphJS.on("afterLogout", function() {
             checkLogin();
         });
+        // Settings
+        if(initiateSettings) initiateSettings();
     }
 </script>
 <?=$this->section('footer')?>

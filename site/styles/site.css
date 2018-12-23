@@ -120,6 +120,14 @@
   transition: all .5s ease-in-out;
 }
 
+/* UI: Input */
+
+.groups-input {}
+
+/* UI: Input Prefix */
+
+div.groups-input-prefix {}
+
 /* COMPONENT: Invitation */
 
 .groups-invitation {
@@ -128,6 +136,56 @@
 
 .groups-invitation > .title + * {
   padding: 1.35em 0 1.2em 0;
+}
+
+/* COMPONENT: Settings */
+
+.groups-settings {
+  width: 30em;
+  margin: 0 auto;
+}
+
+.groups-settings > div {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.groups-settings > div::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.groups-settings > div:last-of-type {
+  margin-bottom: 2.5em;
+}
+
+.groups-settings > div > label {
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+.groups-settings > div.colors > label {
+  width: 100%;
+}
+
+.groups-settings > div.colors > span {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+
+.groups-settings > div.colors > span:last-child {
+  margin-right: 0;
+}
+
+.groups-settings > div.colors > span > label {
+  width: 100%;
+  font-size: .85em;
+}
+
+.groups-settings > button {
+  margin-right: 1em;
 }
 
 /* OPTION: Public/Private Feature */

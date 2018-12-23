@@ -30,6 +30,32 @@ body {
   background-color: rgba(0, 0, 0, .025);
 }
 
+.groups-settings {
+  color: #666666;
+}
+
+.groups-input {
+  color: rgba(0, 0, 0, .75);
+	border: 1px solid rgba(0, 0, 0, .125);
+  background-color: white;
+}
+
+.groups-input::placeholder {
+  color: rgba(0, 0, 0, .25);
+}
+
+.groups-input:focus {
+  color: rgba(0, 0, 0, .75);
+	border: 1px solid rgba(0, 0, 0, .25);
+  background-color: white;
+}
+
+div.groups-input-prefix {
+  color: rgba(0, 0, 0, .75);
+	border: none;
+  background-color: rgba(0, 0, 0, .075);
+}
+
 /* Dark */
 
 body.dark {
@@ -48,4 +74,30 @@ body.dark .groups-box > .title {
     color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
     background-color: rgba(0, 0, 0, .075);
+}
+
+body.dark .groups-settings {
+  color: #aaaaaa;
+}
+
+body.dark .groups-input {
+  color: rgba(255, 255, 255, .75);
+	border: 1px solid rgba(255, 255, 255, .075);
+  background-color: rgba(0, 0, 0, .15);
+}
+
+body.dark .groups-input::placeholder {
+  color: rgba(255, 255, 255, .25);
+}
+
+body.dark .groups-input:focus {
+  color: rgba(255, 255, 255, .75);
+	border: 1px solid rgba(255, 255, 255, .15);
+  background-color: rgba(0, 0, 0, .15);
+}
+
+body.dark div.groups-input-prefix {
+  color: rgba(255, 255, 255, .75);
+	border: none;
+  background-color: rgba(255, 255, 255, .075);
 }
