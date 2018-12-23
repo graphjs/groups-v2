@@ -1,123 +1,129 @@
+/*
+  	This stylesheet contains basic style information related to main layout.
+    It defines the structure of Grou.ps product. All the classes here in this
+    file starts with 'groups-' prefix.
+*/
+
 /* MODEL: Box */
 
 .groups-box {
-  overflow: hidden;
-  padding: 0;
-  border: 1px solid rgba(0, 0, 0, .075);
-  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .05), 0 .15em .1em 0 rgba(0, 0, 0, .075);
-  transition: box-shadow .35s ease;
-  border-radius: 9px;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, .075);
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, .05), 0 .15em .1em 0 rgba(0, 0, 0, .075);
+    transition: box-shadow .35s ease;
+    border-radius: 9px;
 }
 
 .groups-box:hover {
-  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .1), 0 .15em .1em 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, .1), 0 .15em .1em 0 rgba(0, 0, 0, .1);
 }
 
 .groups-box > .title {
-  margin: 0;
-  padding: .5em 0;
+    margin: 0;
+    padding: .5em 0;
 }
 
 /* LAYOUT: Navigation */
 
 .groups-navigation {
-  padding-right: 0;
+    padding-right: 0;
 }
 
 .groups-navigation .navbar-brand {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .groups-navigation .navbar-toggler {
-  padding-left: 0;
-  padding-right: 0;
-  border: none;
-  outline: none;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    outline: none;
 }
 
 .groups-logo {
-  height: 2.5rem;
-  margin-top: .1875rem;
-  margin-bottom: -.8125rem;
-  display: block;
+    height: 2.5rem;
+    margin-top: .1875rem;
+    margin-bottom: -.8125rem;
+    display: block;
 }
 
 .groups-settings-button svg {
-  width: 1rem;
-  height: auto;
-  opacity: .5;
-  transition: opacity .25s ease;
+    width: 1rem;
+    height: auto;
+    opacity: .5;
+    transition: opacity .25s ease;
 }
 
 .groups-settings-button:hover svg {
-  opacity: .75;
+    opacity: .75;
 }
 
 /* LAYOUT: Content */
 
 .groups-content {
-  margin: 2.5rem auto;
+    margin: 2.5rem auto;
 }
 
 
 /* LAYOUT: Footer */
 
 .groups-footer {
-  font-size: .8rem;
+    font-size: .8rem;
 }
 
 .groups-footer a {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .groups-footer .groups-credit {
-  opacity: .75;
-  color: rgb(127, 127, 127);
-  transition: opacity .35 ease;
+    opacity: .75;
+    color: rgb(127, 127, 127);
+    transition: opacity .35 ease;
 }
 
 .groups-footer .groups-credit:hover {
-  opacity: 1;
-  color: rgb(127, 127, 127);
-  text-decoration: none;
+    opacity: 1;
+    color: rgb(127, 127, 127);
+    text-decoration: none;
 }
 
 .groups-footer .groups-credit svg {
-  position: relative;
-  top: .275em;
-  height: 1.5em;
+    position: relative;
+    top: .275em;
+    height: 1.5em;
 }
 
 .groups-footer .groups-credit svg path {
-  fill: rgb(127, 127, 127);
+    fill: rgb(127, 127, 127);
 }
 
 .groups-footer .groups-rainbow {
-  display: inline;
-  z-index: 1;
-  opacity: .5;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  margin-bottom: -.075em;
-  margin-right: -.025em;
-  font-size: 2.5em;
-  line-height: 1em;
-  vertical-align: middle;
-  cursor: pointer;
-  transition: all 0s ease;
+    display: inline;
+    z-index: 1;
+    opacity: .5;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    margin-bottom: -.075em;
+    margin-right: -.025em;
+    font-size: 2.5em;
+    line-height: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0s ease;
 }
 
 .groups-footer .groups-rainbow.static {
-  z-index: 2;
-  opacity: 1;
+    z-index: 2;
+    opacity: 1;
 }
 
 .groups-footer .groups-rainbow.static:hover + .groups-rainbow {
-  opacity: 0;
-  font-size: 12.5em;
-  transition: all .5s ease-in-out;
+    opacity: 0;
+    font-size: 12.5em;
+    transition: all .5s ease-in-out;
 }
 
 /* UI: Input */
@@ -131,73 +137,73 @@ div.groups-input-prefix {}
 /* COMPONENT: Invitation */
 
 .groups-invitation {
-  text-align: center;
+    text-align: center;
 }
 
 .groups-invitation > .title + * {
-  padding: 1.35em 0 1.2em 0;
+    padding: 1.35em 0 1.2em 0;
 }
 
 /* COMPONENT: Settings */
 
 .groups-settings {
-  width: 30em;
-  margin: 0 auto;
+    width: 30em;
+    margin: 0 auto;
 }
 
 .groups-settings > div {
-  width: 100%;
-  margin-bottom: 1.5em;
+    width: 100%;
+    margin-bottom: 1.5em;
 }
 
 .groups-settings > div::after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .groups-settings > div:last-of-type {
-  margin-bottom: 2.5em;
+    margin-bottom: 2.5em;
 }
 
 .groups-settings > div > label {
-  margin-bottom: .5em;
-  font-weight: bold;
+    margin-bottom: .5em;
+    font-weight: bold;
 }
 
 .groups-settings > div.colors > label {
-  width: 100%;
+    width: 100%;
 }
 
 .groups-settings > div.colors > span {
-  float: left;
-  width: 32%;
-  margin-right: 2%;
+    float: left;
+    width: 32%;
+    margin-right: 2%;
 }
 
 .groups-settings > div.colors > span:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .groups-settings > div.colors > span > label {
-  width: 100%;
-  font-size: .85em;
+    width: 100%;
+    font-size: .85em;
 }
 
 .groups-settings > button {
-  margin-right: 1em;
+    margin-right: 1em;
 }
 
 /* OPTION: Public/Private Feature */
 
 .private-feature {
-  display: none;
+    display: none;
 }
 
 body.logged .private-feature {
-  display: block;
+    display: block;
 }
 
 body.logged .public-feature {
-  display: none;
+    display: none;
 }

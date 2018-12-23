@@ -1,18 +1,18 @@
 /*
-
-Overwrite any CSS rule here.
-
+  	This stylesheet overwrites any style information created by Grou.ps,
+    GraphJS, Bootstrap etc. Be sure to properly overwrite other styles,
+    otherwise it won't work.
 */
 
 /* GraphJS */
 
 graphjs-promo {
-  display: none !important;
+    display: none !important;
 }
 
 /* Bootstrap */
 
 .input-group-text {
-  border: 1px solid rgba(0, 0, 0, .15);
-  background-color: rgba(0, 0, 0, .05);
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .05);
 }

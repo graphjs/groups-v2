@@ -15,5 +15,5 @@
 ?>
 
 <main role="main" class="groups-content container">
-  <graphjs-messages></graphjs-messages>
+    <graphjs-messages></graphjs-messages>
 </main>

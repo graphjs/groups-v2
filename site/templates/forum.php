@@ -15,5 +15,5 @@
 ?>
 
 <main role="main" class="groups-content container">
-  <graphjs-forum></graphjs-forum>
+    <graphjs-forum></graphjs-forum>
 </main>

@@ -1,3 +1,7 @@
+/*
+	 This script file contains functions that work product-wide.
+*/
+
 var checkLogin = function() {
     window.GraphJS.getSession(function(response) {
         if(response.success) {

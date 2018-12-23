@@ -1,73 +1,79 @@
+/*
+  	This stylesheet contains additional style information related to theme
+    options. Currently, there are dark and light themes. Different conditions
+    related to theme changes are set here in this file.
+*/
+
 /* Default */
 
 body {
-  background-color: rgb(247, 249, 251);
+    background-color: rgb(247, 249, 251);
 }
 
 .groups-navigation {
-  background-color: rgb(111, 135, 159);
+    background-color: rgb(111, 135, 159);
 }
 
 .nav-underline .nav-link:hover {
-  color: rgb(158, 119, 255);
+    color: rgb(158, 119, 255);
 }
 
 .groups-settings-button svg path {
-  fill: white;
+    fill: white;
 }
 
 .groups-footer {
-  background-color: white;
+    background-color: white;
 }
 
 .groups-box {
-  background-color: white;
+    background-color: white;
 }
 
 .groups-box > .title {
-  color: rgb(111, 135, 159);
-  border-bottom: 1px solid rgba(0, 0, 0, .05);
-  background-color: rgba(0, 0, 0, .025);
+    color: rgb(111, 135, 159);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, .025);
 }
 
 .groups-settings {
-  color: #666666;
+    color: #666666;
 }
 
 .groups-input {
-  color: rgba(0, 0, 0, .75);
-	border: 1px solid rgba(0, 0, 0, .125);
-  background-color: white;
+    color: rgba(0, 0, 0, .75);
+  	border: 1px solid rgba(0, 0, 0, .125);
+    background-color: white;
 }
 
 .groups-input::placeholder {
-  color: rgba(0, 0, 0, .25);
+    color: rgba(0, 0, 0, .25);
 }
 
 .groups-input:focus {
-  color: rgba(0, 0, 0, .75);
-	border: 1px solid rgba(0, 0, 0, .25);
-  background-color: white;
+    color: rgba(0, 0, 0, .75);
+  	border: 1px solid rgba(0, 0, 0, .25);
+    background-color: white;
 }
 
 div.groups-input-prefix {
-  color: rgba(0, 0, 0, .75);
-	border: none;
-  background-color: rgba(0, 0, 0, .075);
+    color: rgba(0, 0, 0, .75);
+  	border: none;
+    background-color: rgba(0, 0, 0, .075);
 }
 
 /* Dark */
 
 body.dark {
-  background-color: rgb(47, 47, 47);
+    background-color: rgb(47, 47, 47);
 }
 
 body.dark .groups-footer {
-  background-color: rgb(31, 31, 31);
+    background-color: rgb(31, 31, 31);
 }
 
 body.dark .groups-box {
-  background-color: rgb(71, 71, 71);
+    background-color: rgb(71, 71, 71);
 }
 
 body.dark .groups-box > .title {
@@ -77,27 +83,27 @@ body.dark .groups-box > .title {
 }
 
 body.dark .groups-settings {
-  color: #aaaaaa;
+    color: #aaaaaa;
 }
 
 body.dark .groups-input {
-  color: rgba(255, 255, 255, .75);
-	border: 1px solid rgba(255, 255, 255, .075);
-  background-color: rgba(0, 0, 0, .15);
+    color: rgba(255, 255, 255, .75);
+  	border: 1px solid rgba(255, 255, 255, .075);
+    background-color: rgba(0, 0, 0, .15);
 }
 
 body.dark .groups-input::placeholder {
-  color: rgba(255, 255, 255, .25);
+    color: rgba(255, 255, 255, .25);
 }
 
 body.dark .groups-input:focus {
-  color: rgba(255, 255, 255, .75);
-	border: 1px solid rgba(255, 255, 255, .15);
-  background-color: rgba(0, 0, 0, .15);
+    color: rgba(255, 255, 255, .75);
+  	border: 1px solid rgba(255, 255, 255, .15);
+    background-color: rgba(0, 0, 0, .15);
 }
 
 body.dark div.groups-input-prefix {
-  color: rgba(255, 255, 255, .75);
-	border: none;
-  background-color: rgba(255, 255, 255, .075);
+    color: rgba(255, 255, 255, .75);
+  	border: none;
+    background-color: rgba(255, 255, 255, .075);
 }

@@ -15,10 +15,10 @@
 ?>
 
 <main role="main" class="groups-content container-fluid p-0 mt-0">
-  <graphjs-group data-reference="group" box="disabled"></graphjs-group>
+    <graphjs-group data-reference="group" box="disabled"></graphjs-group>
 </main>
 <script>
     addAttributes('group', [
-      'id' // The list of parameters attributed to tag
+        'id' // The list of parameters attributed to tag
     ]);
 </script>

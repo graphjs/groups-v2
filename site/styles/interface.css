@@ -1,53 +1,59 @@
+/*
+		This stylesheet contains additional style information related to User
+		Interface elements. Input elements, buttons, links, tooltips etc. are
+		welcome here.
+*/
+
 /* Color Input */
 
 input[type="color"] {
-	-webkit-appearance: none;
-	width: 2em;
-	height: 2em;
-  padding: 0;
-  border-radius: 50%;
-  overflow: hidden;
+		-webkit-appearance: none;
+		width: 2em;
+		height: 2em;
+	  padding: 0;
+	  border-radius: 50%;
+	  overflow: hidden;
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
+		padding: 0;
 }
 
 input[type="color"]::-webkit-color-swatch {
-	border: none;
+		border: none;
 }
 
 /* Switch Input */
 
 input.switch {
-  position: relative;
-  -webkit-appearance: none;
-  outline: none;
-  width: 50px;
-  height: 30px;
-  background-color: white !important;
-  border-radius: 50px;
-  box-shadow: inset -20px 0 0 0 #fff;
+	  position: relative;
+	  -webkit-appearance: none;
+	  outline: none;
+	  width: 50px;
+	  height: 30px;
+	  background-color: white !important;
+	  border-radius: 50px;
+	  box-shadow: inset -20px 0 0 0 #fff;
 }
 
 input.switch:after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  background: transparent;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+	  content: "";
+	  position: absolute;
+	  top: 1px;
+	  left: 1px;
+	  background: transparent;
+	  width: 26px;
+	  height: 26px;
+	  border-radius: 50%;
+	  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
 }
 
 input.switch:checked {
-  box-shadow: inset 20px 0 0 0 #4ed164;
-  border-color: #4ed164;
+	  box-shadow: inset 20px 0 0 0 #4ed164;
+	  border-color: #4ed164;
 }
 
 input.switch:checked:after {
-  left: 20px;
-  box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+	  left: 20px;
+	  box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
 }

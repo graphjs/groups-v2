@@ -15,5 +15,5 @@
 ?>
 
 <main role="main" class="groups-content container">
-  <graphjs-group-list target="<?php if($goal==="show"): ?>/?page=group&id=[[id]]<?php else: ?>/<?=$name?>/group?id=[[id]]<?php endif ?>" box="disabled"></graphjs-group-list>
+    <graphjs-group-list target="<?php if($goal==="show"): ?>/?page=group&id=[[id]]<?php else: ?>/<?=$name?>/group?id=[[id]]<?php endif ?>" box="disabled"></graphjs-group-list>
 </main>
