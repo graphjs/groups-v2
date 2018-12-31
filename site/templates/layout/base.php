@@ -54,9 +54,11 @@
             <li class="nav-item<?php if($title==="Groups"): ?> active<?php endif ?>">
                 <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=groups<?php else: ?>/<?=$name?>/groups<?php endif ?>">Groups</a>
             </li>
+            <!--
             <li class="nav-item<?php if($title==="Forum"): ?> active<?php endif ?>">
                 <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=forum<?php else: ?>/<?=$name?>/forum<?php endif ?>">Forum</a>
             </li>
+            -->
             <li class="nav-item<?php if($title==="Messages"): ?> active<?php endif ?>">
                 <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=messages<?php else: ?>/<?=$name?>/messages<?php endif ?>">Inbox</a>
             </li>
@@ -89,8 +91,10 @@
                     </svg>
                 </a>
             </div>
+            <!--
             <a class="groups-rainbow static" href="https://grou.ps">🌈</a>
   					<div class="groups-rainbow">🌈</div>
+            -->
         </div>
     </div>
 </footer>
