@@ -30,7 +30,19 @@
     padding-right: 0;
 }
 
-.groups-navigation .navbar-brand {
+.groups-controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    padding: calc((3.5rem - 40px) / 2);
+}
+
+.groups-notifications {
+    display: inline-block;
+}
+
+.groups-brand {
     font-weight: 700;
 }
 
@@ -48,7 +60,12 @@
     display: block;
 }
 
+.groups-settings-button span {
+    display: inline;
+}
+
 .groups-settings-button svg {
+    display: none;
     width: 1rem;
     height: auto;
     opacity: .5;
