@@ -6,11 +6,11 @@ $init = include(__DIR__ . "/lib/init.php");
 $templates = new League\Plates\Engine(__DIR__ . '/site/templates');
 
 $goal = "show";
-$public_id = '0AA5B31C-45FE-41F6-BF91-5CB12076468C';
+$public_id = '79982844-6a27-4b3b-b77f-419a79be0e10';
 $primary_color = '#6f879f';
 $text_color = '#3f5f7f';
 $background_color = '#ffffff';
-$host = "https://gjb31c45fe41f6bf915cb12076468c.herokuapp.com";
+$host = "https://gjs-singlesignon.herokuapp.com";
 $stream_host = "";
 $theme = "light";
 

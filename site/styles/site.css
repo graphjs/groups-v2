@@ -38,6 +38,16 @@
     padding: calc((3.5rem - 40px) / 2);
 }
 
+.groups-controls::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.groups-controls > * {
+    float: left;
+}
+
 .groups-notifications {
     display: inline-block;
 }
