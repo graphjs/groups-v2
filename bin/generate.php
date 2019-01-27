@@ -1,21 +1,11 @@
 #!/usr/bin/php
 <?php
 
-require __DIR__ . "/../vendor/autoload.php";
-include __DIR__ . '/../lib/FileGeneration.php';
+require dirname(__DIR__) . "/vendor/autoload.php";
+include dirname(__DIR__) . '/lib/FileGeneration.php';
 
-$dir = __DIR__ . '/../site/templates';
+$dir = dirname(__DIR__) . '/site/templates';
 $templates = new League\Plates\Engine($dir);
-
-/*
-if($argc<3) {
-    echo "You must enter name and id parameters.";
-    exit(1);
-}
-$name = $argv[1];
-$id = $argv[2]; // '79982844-6a27-4b3b-b77f-419a79be0e10';
-$title = $argv[3] ? $argv[3] : $name; 
-*/
 
 $cmd = new Commando\Command();
 
@@ -38,7 +28,7 @@ $cmd->option('h')
     ->describedAs('GraphJS Server Hostname');
 
 $cmd->option('s')
-    ->aka('stream')
+    ->aka('stream_host')
     ->describedAs('Stream Server Hostname');
 
 $cmd->option('p')
@@ -59,6 +49,13 @@ $cmd->option('t')
 
 $name = $cmd[0];
 $title = $cmd[1];
-$id = $cmd["id"];
+$public_id = $cmd["id"] ?? null;
 
-(new FileGeneration($dir, $name, $title))->generate();
+$theme = $cmd['theme'] ?? "light";
+$text_color = $cmd['text_color'] ?? null;
+$background_color = $cmd['background_color'] ?? null;
+$primary_color = $cmd['primary_color'] ?? null;
+$host = $cmd['host'] ?? null;
+$stream_host = $cmd['stream_host'] ?? null;
+
+(new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host))->generate();
