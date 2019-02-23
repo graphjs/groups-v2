@@ -21,6 +21,7 @@ $primary_color = $_REQUEST['primary_color'] ?? null;
 $host = $_REQUEST['host'] ?? null;
 $stream_host = $_REQUEST['stream_host'] ?? null;
 $secret = $_REQUEST['secret'] ?? null;
+$regen = $_REQUEST['regen'] ?? false;
 
     if (! $name || ! $title || !$public_id) {
         header('Content-Type: application/json');
@@ -57,7 +58,7 @@ $secret = $_REQUEST['secret'] ?? null;
             $dir, $name, $title, $theme, $public_id, $primary_color, 
             $text_color, $background_color, $host, $stream_host
         )
-    )->generate();
+    )->generate($regen);
 
     header('Content-Type: application/json');
     echo json_encode([
