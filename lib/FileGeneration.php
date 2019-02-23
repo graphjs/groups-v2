@@ -35,7 +35,7 @@ class FileGeneration
         if(!is_null($stream_host)) $this->stream_host = $stream_host;
     }
 
-    public function generate()
+    public function generate(bool $regen = false)
     {
         $dir = $this->dir;
         $name = $this->name;
@@ -55,6 +55,14 @@ class FileGeneration
         /// defaults
 
         $site = __DIR__. '/../dist/' . $name;
+        if(!$regen) {
+            if (file_exists($site)) {
+                throw new \Exception("There is an existing folder in: ".$site);
+            }
+        }
+        elseif (file_exists($site)) {
+            $this->cleanupDir($site);
+        }
         if (! file_exists($site)) {
             mkdir($site);
         }
@@ -97,4 +105,14 @@ class FileGeneration
         $jsFilePath = $site.'/'.'init.js';
         file_put_contents($jsFilePath, $packed);
     }
+
+    // https://andy-carter.com/blog/recursively-remove-a-directory-in-php
+    private function cleanupDir(string $path) {
+        $files = glob($path . '/*');
+       foreach ($files as $file) {
+           is_dir($file) ? $this->cleanupDir($file) : unlink($file);
+       }
+       rmdir($path);
+        return;
+   }
 }

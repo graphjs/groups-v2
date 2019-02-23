@@ -40,7 +40,24 @@ $secret = $_REQUEST['secret'] ?? null;
         exit;
     }
 
-    (new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host))->generate();
+    // make a backup
+    $backup_script = getenv("BACKUP_SCRIPT");
+    if(
+        !empty($backup_script) &&
+        file_exists($backup_script) &&
+        is_executable($backup_script)
+    ) {
+        exec(
+            $backup_script
+        );
+    }
+
+    // actual file generation takes place here.
+    (new FileGeneration(
+            $dir, $name, $title, $theme, $public_id, $primary_color, 
+            $text_color, $background_color, $host, $stream_host
+        )
+    )->generate();
 
     header('Content-Type: application/json');
     echo json_encode([
