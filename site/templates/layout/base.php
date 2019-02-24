@@ -70,7 +70,7 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=settings<?php else: ?>/<?=$name?>/account<?php endif ?>">General Settings</a>
+                    <!--<a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=settings<?php else: ?>/<?=$name?>/account<?php endif ?>">General Settings</a>-->
                     <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=account<?php else: ?>/<?=$name?>/account<?php endif ?>">Account Settings</a>
                     <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=create-group<?php else: ?>/<?=$name?>/create-group<?php endif ?>">Create Group</a>
                 </div>
