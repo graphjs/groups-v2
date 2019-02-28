@@ -120,7 +120,7 @@
             checkLogin();
         });
         // Settings
-        if(initiateSettings) initiateSettings();
+        //if(initiateSettings) initiateSettings();
     }
 </script>
 <?=$this->section('footer')?>
