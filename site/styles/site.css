@@ -21,7 +21,12 @@
 
 .groups-box > .title {
     margin: 0;
-    padding: .5em 0;
+    padding: .5em 1.5em;
+}
+
+.groups-box > .content {
+    margin: 0;
+    padding: 1.5em;
 }
 
 /* LAYOUT: Navigation */
@@ -92,6 +97,16 @@
     margin: 2.5rem auto;
 }
 
+/* LAYOUT: Sidebar */
+
+.groups-sidebar > * {
+    margin-bottom: 30px;
+}
+
+.groups-sidebar > *:last-child {
+    margin-bottom: 0;
+}
+
 
 /* LAYOUT: Footer */
 
@@ -153,6 +168,38 @@
     transition: all .5s ease-in-out;
 }
 
+/* Page: Error */
+
+#groups-page-error {
+    text-align: center;
+}
+
+#groups-page-error svg {
+    margin-bottom: 30px;
+}
+
+#groups-page-error h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+#groups-page-error p {
+    font-size: 1.25em;
+}
+
+/* UI: Link */
+
+.groups-link {
+    border-bottom-width: 1px;
+		border-bottom-style: dotted;
+		text-decoration: none;
+    transition: all .25s ease;
+}
+
+.groups-link:hover, .groups-link:active {
+		text-decoration: none;
+}
+
 /* UI: Input */
 
 .groups-input {}
@@ -160,15 +207,17 @@
 /* UI: Input Prefix */
 
 div.groups-input-prefix {}
+  
+/* COMPONENT: Information */
+
+.groups-information {
+    text-align: center;
+}
 
 /* COMPONENT: Invitation */
 
 .groups-invitation {
     text-align: center;
-}
-
-.groups-invitation > .title + * {
-    padding: 1.35em 0 1.2em 0;
 }
 
 /* COMPONENT: Settings */

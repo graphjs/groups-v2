@@ -19,13 +19,19 @@
         <section class="col-md-12 col-lg-8">
             <graphjs-feed></graphjs-feed>
         </section>
-        <aside class="d-none d-lg-block col-lg-4">
+        <aside class="groups-sidebar d-none d-lg-block col-lg-4">
             <div class="register-box public-feature">
                  <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
             </div>
+            <div class="groups-information groups-box private-feature">
+                <div class="title">About <?=$brand?></div>
+                <div class="content">
+                    Sample Page is a sample page to demonstrate how Grou.ps pages look and feel like.
+                </div>
+            </div>
             <div class="groups-invitation groups-box private-feature">
                 <div class="title">Invite people to this group</div>
-                <div class="addthis_inline_share_toolbox"></div>
+                <div class="content addthis_inline_share_toolbox"></div>
             </div>
         </aside>
     </div>

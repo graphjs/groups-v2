@@ -26,6 +26,16 @@ body {
     background-color: white;
 }
 
+.groups-link {
+		color: rgba(63, 95, 127, .75);
+    border-bottom-color: rgba(63, 95, 127, .25);
+}
+
+.groups-link:hover, .groups-link:active {
+    color: rgb(63, 95, 127);
+		border-bottom-color: rgb(63, 95, 127);
+}
+
 .groups-box {
     background-color: white;
 }
@@ -65,11 +75,22 @@ div.groups-input-prefix {
 /* Dark */
 
 body.dark {
+    color: white;
     background-color: rgb(47, 47, 47);
 }
 
 body.dark .groups-footer {
     background-color: rgb(31, 31, 31);
+}
+
+body.dark .groups-link {
+		color: rgb(255, 255, 255, .75);
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+body.dark .groups-link:hover, .groups-link:active {
+    color: white;
+		border-bottom-color: rgba(255, 255, 255, .75);
 }
 
 body.dark .groups-box {
