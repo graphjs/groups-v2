@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="description" content="Grou.ps v2">
-    <meta name="keywords" content="Social, Groups, Forum, Comments, ">
+    <meta name="keywords" content="Social, Groups, Forum, Comments">
     <meta name="author" content="GROU.PS Inc.">
     <meta itemprop="name" content="Grou.ps v2">
     <meta itemprop="description" content="Grou.ps v2">
