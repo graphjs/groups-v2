@@ -58,7 +58,11 @@
 }
 
 .groups-brand {
+    max-width: 15em;
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .groups-navigation .navbar-toggler {
@@ -207,7 +211,7 @@
 /* UI: Input Prefix */
 
 div.groups-input-prefix {}
-  
+
 /* COMPONENT: Information */
 
 .groups-information {
