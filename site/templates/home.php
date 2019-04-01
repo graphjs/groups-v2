@@ -23,7 +23,7 @@
             <div class="register-box public-feature">
                  <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
             </div>
-            <div class="groups-information groups-box private-feature">
+            <div style="display: none !important;" class="groups-information groups-box private-feature">
                 <div class="title">About</div>
                 <div class="content">
                     Sample Page is a sample page to demonstrate how Grou.ps pages look and feel like.
