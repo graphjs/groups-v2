@@ -5,6 +5,7 @@ class FileGeneration
     private $dir;
     private $name;
     private $title;
+    private $description;
     private $theme;
     private $public_id='79982844-6a27-4b3b-b77f-419a79be0e10';
     private $primary_color='rgb(111, 135, 159)';
@@ -14,7 +15,7 @@ class FileGeneration
     private $stream_host = "";
 
     public function __construct(
-        $dir, $name, $title, $theme = "light",
+        $dir, $name, $title, $description, $theme = "light",
         $public_id = null, 
         $primary_color = null, 
         $text_color = null,
@@ -26,6 +27,7 @@ class FileGeneration
         $this->dir = $dir;
         $this->name = $name;
         $this->title = $title;
+        $this->description = $description;
         $this->theme = $theme;
         if(!is_null($public_id)) $this->public_id = $public_id;
         if(!is_null($primary_color)) $this->primary_color = $primary_color;
@@ -40,6 +42,7 @@ class FileGeneration
         $dir = $this->dir;
         $name = $this->name;
         $title = $this->title;
+        $description = $this->description;
         $theme = $this->theme;
         $public_id = $this->public_id;
         $primary_color = $this->primary_color;
@@ -83,6 +86,7 @@ class FileGeneration
                         "goal"=>$goal,
                         "public_id"=>$public_id,
                         "brand"=>$title,
+                        "about"=>$description,
                         "primaryColor"     => $primary_color,
                         "textColor"        => $text_color,
                         "backgroundColor"  => $background_color,

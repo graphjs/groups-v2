@@ -13,6 +13,7 @@ $dotenv->load();
 
 $name = $_REQUEST['name'] ?? null;
 $title = $_REQUEST['title'] ?? null;
+$description = $_REQUEST['description'] ?? "";
 $public_id = $_REQUEST['public_id'] ?? null;
 $theme = $_REQUEST['theme'] ?? "light";
 $text_color = $_REQUEST['text_color'] ?? null;
@@ -55,7 +56,7 @@ $regen = $_REQUEST['regen'] ?? false;
 
     // actual file generation takes place here.
     (new FileGeneration(
-            $dir, $name, $title, $theme, $public_id, $primary_color, 
+            $dir, $name, $title, $description, $theme, $public_id, $primary_color, 
             $text_color, $background_color, $host, $stream_host
         )
     )->generate($regen);

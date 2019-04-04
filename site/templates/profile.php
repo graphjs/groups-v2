@@ -2,6 +2,7 @@
     $this->layout('layout/template_'.$this->e($goal), [
         'title'     => 'Profile',
         'brand'     => $this->e($brand),
+        'about'     => $this->e($about),
         'public_id' => $this->e($public_id),
         'primary_color' => $this->e($primaryColor),
         'text_color' => $this->e($textColor),

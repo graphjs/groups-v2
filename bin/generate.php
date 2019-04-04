@@ -19,6 +19,10 @@ $cmd->option()
     ->require()
     ->describedAs('Group Title (may contain spaces or special chars)');
 
+$cmd->option('d')
+    ->aka('description')
+    ->describedAs('Group Description (may contain spaces or special chars)');
+
 $cmd->option('i')
     ->aka('id')
     ->describedAs('GraphJS ID');
@@ -49,6 +53,7 @@ $cmd->option('t')
 
 $name = $cmd[0];
 $title = $cmd[1];
+$description = $cmd["description"] ?? "";
 $public_id = $cmd["id"] ?? null;
 
 $theme = $cmd['theme'] ?? "light";
@@ -58,4 +63,4 @@ $primary_color = $cmd['primary_color'] ?? null;
 $host = $cmd['host'] ?? null;
 $stream_host = $cmd['stream_host'] ?? null;
 
-(new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host))->generate();
+(new FileGeneration($dir, $name, $title, $description, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host))->generate();
