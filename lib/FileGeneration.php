@@ -109,7 +109,7 @@ class FileGeneration
 
     // https://andy-carter.com/blog/recursively-remove-a-directory-in-php
     private function cleanupDir(string $path) {
-        $files = glob($path . '/*');
+        $files = glob($path . '/*'); // glob ignores all hidden files
        foreach ($files as $file) {
            is_dir($file) ? $this->cleanupDir($file) : unlink($file);
        }
