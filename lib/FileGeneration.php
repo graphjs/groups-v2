@@ -61,7 +61,7 @@ class FileGeneration
             }
         }
         elseif (file_exists($site)) {
-            unlink($ite.".html");
+            unlink($site.".html");
             $this->cleanupDir($site);
         }
         if (! file_exists($site)) {
