@@ -6,7 +6,7 @@ class FileGeneration
     private $name;
     private $title;
     private $theme;
-    private $remote_url;
+    private $remote_url = "";
     private $public_id='79982844-6a27-4b3b-b77f-419a79be0e10';
     private $primary_color='rgb(111, 135, 159)';
     private $text_color = 'rgb(63, 95, 127)';
@@ -15,13 +15,14 @@ class FileGeneration
     private $stream_host = "";
 
     public function __construct(
-        $dir, $name, $title, $remote_url, $theme = "light",
+        $dir, $name, $title, $theme = "light",
         $public_id = null, 
         $primary_color = null, 
         $text_color = null,
         $background_color = null,
         $host = null,
-        $stream_host = null
+        $stream_host = null, 
+        $remote_url = ""
     )
     {
         $this->dir = $dir;
