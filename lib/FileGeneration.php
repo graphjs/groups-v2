@@ -6,6 +6,7 @@ class FileGeneration
     private $name;
     private $title;
     private $theme;
+    private $remote_url;
     private $public_id='79982844-6a27-4b3b-b77f-419a79be0e10';
     private $primary_color='rgb(111, 135, 159)';
     private $text_color = 'rgb(63, 95, 127)';
@@ -14,7 +15,7 @@ class FileGeneration
     private $stream_host = "";
 
     public function __construct(
-        $dir, $name, $title, $theme = "light",
+        $dir, $name, $title, $remote_url, $theme = "light",
         $public_id = null, 
         $primary_color = null, 
         $text_color = null,
@@ -27,6 +28,7 @@ class FileGeneration
         $this->name = $name;
         $this->title = $title;
         $this->theme = $theme;
+        $this->remote_url = $remote_url;
         if(!is_null($public_id)) $this->public_id = $public_id;
         if(!is_null($primary_color)) $this->primary_color = $primary_color;
         if(!is_null($text_color)) $this->text_color = $text_color;
@@ -105,6 +107,27 @@ class FileGeneration
         $packed = $initOutput;
         $jsFilePath = $site.'/'.'init.js';
         file_put_contents($jsFilePath, $packed);
+
+        $remoteUrl = $this->remote_url;
+        $remoteName = 'origin';
+
+        if (! $regen) {
+            $repo = \Cz\Git\GitRepository::init($site);
+            $repo->addRemote($remoteName, $remoteUrl);
+            $repo->addAllChanges();
+            $repo->commit(time());
+        } else {
+            $repo = new \Cz\Git\GitRepository($site);
+            if ($remoteUrl) {
+                $repo->setRemoteUrl($remoteName, $remoteUrl);
+            }
+            if ($repo->hasChanges()) {
+                $repo->addAllChanges();
+                $repo->commit(time());
+            }
+        }
+
+        $repo->push($remoteName, ['master']);
     }
 
     // https://andy-carter.com/blog/recursively-remove-a-directory-in-php
@@ -113,7 +136,6 @@ class FileGeneration
        foreach ($files as $file) {
            is_dir($file) ? $this->cleanupDir($file) : unlink($file);
        }
-       rmdir($path);
         return;
    }
 }
