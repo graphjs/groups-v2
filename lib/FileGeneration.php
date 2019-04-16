@@ -113,22 +113,28 @@ class FileGeneration
         $remoteName = 'origin';
 
         if (! $regen) {
+            // new generated site is always git repo
             $repo = \Cz\Git\GitRepository::init($site);
-            $repo->addRemote($remoteName, $remoteUrl);
             $repo->addAllChanges();
             $repo->commit(time());
-        } else {
-            $repo = new \Cz\Git\GitRepository($site);
             if ($remoteUrl) {
-                $repo->setRemoteUrl($remoteName, $remoteUrl);
+                $repo->addRemote($remoteName, $remoteUrl);
+                $repo->push($remoteName, ['master']);
             }
-            if ($repo->hasChanges()) {
-                $repo->addAllChanges();
-                $repo->commit(time());
+        } else {
+            // old generated site might not be git repo
+            if (is_dir("$site/.git")) {
+                $repo = new \Cz\Git\GitRepository($site);
+                if ($repo->hasChanges()) {
+                    $repo->addAllChanges();
+                    $repo->commit(time());
+                }
+                if ($remoteUrl) {
+                    $repo->setRemoteUrl($remoteName, $remoteUrl);
+                    $repo->push($remoteName, ['master']);
+                }
             }
         }
-
-        $repo->push($remoteName, ['master']);
     }
 
     // https://andy-carter.com/blog/recursively-remove-a-directory-in-php
