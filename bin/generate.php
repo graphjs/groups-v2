@@ -19,8 +19,8 @@ $cmd->option()
     ->require()
     ->describedAs('Group Title (may contain spaces or special chars)');
 
-$cmd->option()
-    ->require()
+$cmd->option('g')
+    ->aka('git')
     ->describedAs('Git Remote Url');
 
 $cmd->option('i')
@@ -53,7 +53,7 @@ $cmd->option('t')
 
 $name = $cmd[0];
 $title = $cmd[1];
-$remote_url = $cmd[2];
+$remote_url = $cmd['git'] ?? "";
 $public_id = $cmd["id"] ?? null;
 
 $theme = $cmd['theme'] ?? "light";
