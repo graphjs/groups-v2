@@ -63,4 +63,4 @@ $primary_color = $cmd['primary_color'] ?? null;
 $host = $cmd['host'] ?? null;
 $stream_host = $cmd['stream_host'] ?? null;
 
-(new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host, $remote_url))->generate(true);
+(new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host, $remote_url))->generate();
