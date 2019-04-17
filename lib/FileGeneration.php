@@ -7,6 +7,7 @@ class FileGeneration
     private $title;
     private $description;
     private $theme;
+    private $remote_url = "";
     private $public_id='79982844-6a27-4b3b-b77f-419a79be0e10';
     private $primary_color='rgb(111, 135, 159)';
     private $text_color = 'rgb(63, 95, 127)';
@@ -21,7 +22,8 @@ class FileGeneration
         $text_color = null,
         $background_color = null,
         $host = null,
-        $stream_host = null
+        $stream_host = null, 
+        $remote_url = ""
     )
     {
         $this->dir = $dir;
@@ -29,6 +31,7 @@ class FileGeneration
         $this->title = $title;
         $this->description = $description;
         $this->theme = $theme;
+        $this->remote_url = $remote_url;
         if(!is_null($public_id)) $this->public_id = $public_id;
         if(!is_null($primary_color)) $this->primary_color = $primary_color;
         if(!is_null($text_color)) $this->text_color = $text_color;
@@ -64,7 +67,7 @@ class FileGeneration
             }
         }
         elseif (file_exists($site)) {
-            unlink($ite.".html");
+            unlink($site.".html");
             $this->cleanupDir($site);
         }
         if (! file_exists($site)) {
@@ -109,15 +112,46 @@ class FileGeneration
         $packed = $initOutput;
         $jsFilePath = $site.'/'.'init.js';
         file_put_contents($jsFilePath, $packed);
+
+        $remoteUrl = $this->remote_url;
+        $remoteName = 'origin';
+
+        if (! $regen) {
+            // new generated site is always git repo
+            $repo = \Cz\Git\GitRepository::init($site);
+            chdir($site);
+            
+            exec("git config user.email 'business@groups-inc.com'");
+            exec("git config user.name 'system'");
+            $repo->addAllChanges();
+            $repo->commit((string) time());
+            if ($remoteUrl) {
+                $repo->addRemote($remoteName, $remoteUrl);
+                $repo->push($remoteName, ['master']);
+            }
+        } else {
+            // old generated site might not be git repo
+            if (is_dir("$site/.git")) {
+                $repo = new \Cz\Git\GitRepository($site);
+                chdir($site);
+                if ($repo->hasChanges()) {
+                    $repo->addAllChanges();
+                    $repo->commit(time());
+                }
+                if ($remoteUrl) {
+                    $repo->setRemoteUrl($remoteName, $remoteUrl);
+                    $repo->push($remoteName, ['master']);
+                }
+            }
+        }
     }
 
     // https://andy-carter.com/blog/recursively-remove-a-directory-in-php
     private function cleanupDir(string $path) {
-        $files = glob($path . '/*');
+        $files = glob($path . '/*'); // glob ignores all hidden files
        foreach ($files as $file) {
            is_dir($file) ? $this->cleanupDir($file) : unlink($file);
        }
-       rmdir($path);
         return;
    }
 }
