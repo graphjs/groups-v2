@@ -17,6 +17,7 @@ $theme = "light";
 echo $templates->render($_GET["page"], [
         "goal"             => $goal,
         "brand"            => "Sample Page",
+        "about"            => "Sample Page is a sample Grou.ps site.", // Please check whether this line is necessary or not
         "public_id"        => $public_id, // $init($public_id), // (new \Tholu\Packer\Packer($init($public_id)))->pack()
         "primaryColor"     => $primary_color,
         "textColor"        => $text_color,

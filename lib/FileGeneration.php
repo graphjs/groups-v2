@@ -5,6 +5,7 @@ class FileGeneration
     private $dir;
     private $name;
     private $title;
+    private $description;
     private $theme;
     private $remote_url = "";
     private $public_id='79982844-6a27-4b3b-b77f-419a79be0e10';
@@ -22,12 +23,14 @@ class FileGeneration
         $background_color = null,
         $host = null,
         $stream_host = null, 
-        $remote_url = ""
+        $remote_url = "",
+        $description = ""
     )
     {
         $this->dir = $dir;
         $this->name = $name;
         $this->title = $title;
+        $this->description = $description;
         $this->theme = $theme;
         $this->remote_url = $remote_url;
         if(!is_null($public_id)) $this->public_id = $public_id;
@@ -43,6 +46,7 @@ class FileGeneration
         $dir = $this->dir;
         $name = $this->name;
         $title = $this->title;
+        $description = $this->description;
         $theme = $this->theme;
         $public_id = $this->public_id;
         $primary_color = $this->primary_color;
@@ -86,6 +90,7 @@ class FileGeneration
                         "goal"=>$goal,
                         "public_id"=>$public_id,
                         "brand"=>$title,
+                        "about"=>$description,
                         "primaryColor"     => $primary_color,
                         "textColor"        => $text_color,
                         "backgroundColor"  => $background_color,

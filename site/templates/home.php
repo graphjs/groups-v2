@@ -2,6 +2,7 @@
     $this->layout('layout/template_'.$this->e($goal), [
         'title' => 'Home',
         'brand'     => $this->e($brand),
+        'about'     => $this->e($about),
         'public_id'=>$this->e($public_id),
         'primary_color' => $this->e($primaryColor),
         'text_color' => $this->e($textColor),
@@ -23,12 +24,17 @@
             <div class="register-box public-feature">
                  <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
             </div>
-            <div style="display: none !important;" class="groups-information groups-box private-feature">
+            <!-- Please check whether this code section works or not
+            SECTION START -->
+            <?php if(strlen($about) > 0): ?>
+            <div class="groups-information groups-box private-feature">
                 <div class="title">About</div>
                 <div class="content">
-                    Sample Page is a sample page to demonstrate how Grou.ps pages look and feel like.
+                    <?=html_entity_decode($this->e($about, "urldecode"), ENT_QUOTES | ENT_HTML5)?>
                 </div>
             </div>
+            <?php endif ?>
+            <!-- SECTION END -->
             <div class="groups-invitation groups-box private-feature">
                 <div class="title">Invite people to this group</div>
                 <div class="content addthis_inline_share_toolbox"></div>
