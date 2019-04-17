@@ -115,10 +115,12 @@ class FileGeneration
         if (! $regen) {
             // new generated site is always git repo
             $repo = \Cz\Git\GitRepository::init($site);
-            $repo->addAllChanges();
+            chdir($site);
+            
             exec("git config user.email 'business@groups-inc.com'");
             exec("git config user.name 'system'");
-            $repo->commit(time());
+            $repo->addAllChanges();
+            $repo->commit((string) time());
             if ($remoteUrl) {
                 $repo->addRemote($remoteName, $remoteUrl);
                 $repo->push($remoteName, ['master']);
@@ -127,6 +129,7 @@ class FileGeneration
             // old generated site might not be git repo
             if (is_dir("$site/.git")) {
                 $repo = new \Cz\Git\GitRepository($site);
+                chdir($site);
                 if ($repo->hasChanges()) {
                     $repo->addAllChanges();
                     $repo->commit(time());
