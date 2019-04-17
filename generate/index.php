@@ -13,7 +13,7 @@ $dotenv->load();
 
 $name = $_REQUEST['name'] ?? null;
 $title = $_REQUEST['title'] ?? null;
-$remote_url = $_REQUEST['remote_url'] ?? "";
+$remote_url = $_REQUEST['git'] ?? "";
 $public_id = $_REQUEST['public_id'] ?? null;
 $theme = $_REQUEST['theme'] ?? "light";
 $text_color = $_REQUEST['text_color'] ?? null;
