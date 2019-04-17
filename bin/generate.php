@@ -19,8 +19,13 @@ $cmd->option()
     ->require()
     ->describedAs('Group Title (may contain spaces or special chars)');
 
+<<<<<<< HEAD
 $cmd->option('g')
     ->aka('git')
+=======
+$cmd->option()
+    ->require()
+>>>>>>> git
     ->describedAs('Git Remote Url');
 
 $cmd->option('i')
@@ -53,7 +58,11 @@ $cmd->option('t')
 
 $name = $cmd[0];
 $title = $cmd[1];
+<<<<<<< HEAD
 $remote_url = $cmd['git'] ?? "";
+=======
+$remote_url = $cmd[2];
+>>>>>>> git
 $public_id = $cmd["id"] ?? null;
 
 $theme = $cmd['theme'] ?? "light";
@@ -63,4 +72,8 @@ $primary_color = $cmd['primary_color'] ?? null;
 $host = $cmd['host'] ?? null;
 $stream_host = $cmd['stream_host'] ?? null;
 
+<<<<<<< HEAD
 (new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host, $remote_url))->generate();
+=======
+(new FileGeneration($dir, $name, $title, $theme, $public_id, $primary_color, $text_color, $background_color, $host, $stream_host, $remote_url))->generate(true);
+>>>>>>> git
