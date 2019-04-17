@@ -114,6 +114,8 @@ class FileGeneration
 
         if (! $regen) {
             $repo = \Cz\Git\GitRepository::init($site);
+            exec("git config user.email 'business@groups-inc.com'");
+            exec("git config user.name 'system'");
             $repo->addRemote($remoteName, $remoteUrl);
             $repo->addAllChanges();
             $repo->commit(time());
