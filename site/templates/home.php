@@ -21,13 +21,10 @@
             <graphjs-feed></graphjs-feed>
         </section>
         <aside class="groups-sidebar d-none d-lg-block col-lg-4">
-            <div class="register-box public-feature">
-                 <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
-            </div>
-            <!-- Please check whether this code section works or not
-            SECTION START -->
+        
+            <!-- SECTION START -->
             <?php if(strlen($about) > 0): ?>
-            <div class="groups-information groups-box private-feature">
+            <div class="groups-information groups-box public-feature">
                 <div class="title">About</div>
                 <div class="content">
                     <?=html_entity_decode($this->e($about, "urldecode"), ENT_QUOTES | ENT_HTML5)?>
@@ -35,6 +32,11 @@
             </div>
             <?php endif ?>
             <!-- SECTION END -->
+
+            <div class="register-box public-feature">
+                 <graphjs-auth-register min-width="100%" max-width="100%"></graphjs-auth-register>
+            </div>
+            
             <div class="groups-invitation groups-box private-feature">
                 <div class="title">Invite people to this group</div>
                 <div class="content addthis_inline_share_toolbox"></div>
