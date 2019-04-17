@@ -16,14 +16,15 @@ class FileGeneration
     private $stream_host = "";
 
     public function __construct(
-        $dir, $name, $title, $description, $theme = "light",
+        $dir, $name, $title, $theme = "light",
         $public_id = null, 
         $primary_color = null, 
         $text_color = null,
         $background_color = null,
         $host = null,
         $stream_host = null, 
-        $remote_url = ""
+        $remote_url = "",
+        $description = ""
     )
     {
         $this->dir = $dir;
