@@ -140,7 +140,12 @@ class FileGeneration
                     $repo->commit(time());
                 }
                 if ($remoteUrl) {
-                    $repo->setRemoteUrl($remoteName, $remoteUrl);
+                    try {
+                        $repo->addRemote($remoteName, $remoteUrl);
+                    }
+                    catch(\Exception $e) {
+                        $repo->setRemoteUrl($remoteName, $remoteUrl);
+                    }
                     $repo->push($remoteName, ['master']);
                 }
             }
