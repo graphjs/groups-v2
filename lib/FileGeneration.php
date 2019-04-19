@@ -67,6 +67,9 @@ class FileGeneration
                 throw new \Exception("There is an existing folder in: ".$site);
             }
         }
+        elseif(file_exists($site."/CUSTOM")) { // regen but CUSTOM
+            throw new \Exception("This is a custom folder, won't continue: ".$site);         
+        }
         elseif (file_exists($site)) {
             unlink($site.".html");
             $this->cleanupDir($site);
