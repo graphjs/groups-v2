@@ -1,20 +1,7 @@
-<?php
-    $this->layout('layout/template_'.$this->e($goal), [
-        'title'     => 'General Settings',
-        'brand'     => $this->e($brand),
-        'about'     => $this->e($about),
-        'public_id' =>$this->e($public_id),
-        'primary_color' => $this->e($primaryColor),
-        'text_color' => $this->e($textColor),
-        'background_color' => $this->e($backgroundColor),
-        'host' => $this->e($host),
-        'stream_host' => $this->e($streamHost),
-        "theme" => $this->e($theme),
-        "name"  => $this->e($name),
-        "goal" => $this->e($goal)
-    ]);
-?>
+{% set title = 'General Settings' %}
+{% extends 'layout/template_' + goal + '.njk' %}
 
+{% block content %}
 <main role="main" class="groups-content container-fluid" onload="window.alert()">
     <form class="groups-settings" id="general-settings">
         <div class="form-group">
@@ -23,12 +10,12 @@
                 <div class="input-group-prepend">
                     <div class="groups-input-prefix input-group-text">https://gr.ps/</div>
                 </div>
-                <input type="text" class="id groups-input form-control" value="<?=$this->e($name)?>" placeholder="your_id">
+                <input type="text" class="id groups-input form-control" value="{{ name }}" placeholder="your_id">
             </div>
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" name="brandTitle" class="title groups-input form-control" value="<?=$this->e($brand)?>" placeholder="Please enter your title" onKeyUp="changeTitle(event)">
+            <input type="text" name="brandTitle" class="title groups-input form-control" value="{{ brand }}" placeholder="Please enter your title" onKeyUp="changeTitle(event)">
         </div>
         <div class="form-group">
             <label>Dark Theme</label>
@@ -50,8 +37,10 @@
             </span>
         </div>
         <button type="button" class="btn btn-secondary">Save</button>
-        <a class="text-danger" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">Exit without saving</a>
+        <a class="text-danger" href="{% if (goal === "show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">Exit without saving</a>
     </form>
 </main>
 
 <script type="text/javascript" src="/site/scripts/settings.js"></script>
+{% endblock %}
+

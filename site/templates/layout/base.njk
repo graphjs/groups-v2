@@ -7,9 +7,10 @@
     <meta name="description" content="Grou.ps v2">
     <meta name="keywords" content="Social, Groups, Forum, Comments">
     <meta name="author" content="GROU.PS Inc.">
+    <meta name="graphjs-public-id" content="{{ public_id }}">
     <meta itemprop="name" content="Grou.ps v2">
     <meta itemprop="description" content="Grou.ps v2">
-    <title><?=$this->e($title)?> | Grou.ps</title>
+    <title>{{ title }} | Grou.ps</title>
     <script type="text/javascript" src="/site/scripts/client.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap.min.css" />
@@ -27,16 +28,18 @@
     <!-- Icons -->
 		<link rel="icon" type="image/png" href="/site/images/identity/icon.png">
 		<link rel="apple-touch-icon" href="/site/images/identity/icon-touch.png">
+    <!-- Extra Head, if any -->
+    {{ extra_head|safe }}
 </head>
-<body class="<?=$this->e($theme)?>" style="color: <?=$this->e($text_color)?>">
+<body class="{{ theme }}" style="color: {{ text_color }}">
 <!-- Navigation -->
-<nav style="background-color: <?=$this->e($primary_color)?>" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
-    <a class="groups-brand navbar-brand d-none d-md-block" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">
+<nav style="background-color: {{ primary_color }}" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
+    <a class="groups-brand navbar-brand d-none d-md-block" href="{% if (goal === "show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">
         <!--
             You can place your logo here.
             Any text or image is okay to use.
         -->
-        <?=html_entity_decode($this->e($brand, "urldecode"), ENT_QUOTES | ENT_HTML5)?>
+        {{ brand }}
     </a>
     <!-- Mobile menu switch button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse-menu">
@@ -45,22 +48,24 @@
     <div id="collapse-menu" class="collapse navbar-collapse">
         <!-- Menu -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item<?php if($title==="Home"): ?> active<?php endif ?>">
-                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=home<?php else: ?>/<?=$name?>/home<?php endif ?>">Home</a>
+            <li class="nav-item{% if (title==="Home") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">Home</a>
             </li>
-            <li class="nav-item<?php if($title==="Members"): ?> active<?php endif ?>">
-                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=members<?php else: ?>/<?=$name?>/members<?php endif ?>">Members</a>
+            <li class="nav-item{% if (title==="Members") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members{% endif %}">Members</a>
             </li>
-            <li class="nav-item<?php if($title==="Groups"): ?> active<?php endif ?>">
-                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=groups<?php else: ?>/<?=$name?>/groups<?php endif ?>">Groups</a>
+            {% if (module_forum==="on") %}
+            <li class="nav-item{% if (title==="Groups") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=groups{% else %}/{{ name }}/groups{% endif %}">Groups</a>
             </li>
-            <!--
-            <li class="nav-item<?php if($title==="Forum"): ?> active<?php endif ?>">
-                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=forum<?php else: ?>/<?=$name?>/forum<?php endif ?>">Forum</a>
+            {% endif %}
+            {% if (module_forum==="on") %}
+            <li class="nav-item{% if (title==="Forum") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=forum{% else %}/{{ name }}/forum{% endif %}">Forum</a>
             </li>
-            -->
-            <li class="nav-item<?php if($title==="Messages"): ?> active<?php endif ?>">
-                <a class="nav-link" href="<?php if($goal==="show"): ?>/?page=messages<?php else: ?>/<?=$name?>/messages<?php endif ?>">Inbox</a>
+            {% endif %}
+            <li class="nav-item{% if (title==="Messages") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}">Inbox</a>
             </li>
             <li class="nav-item dropdown private-feature">
                 <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -70,22 +75,23 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu">
-                    <!--<a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=settings<?php else: ?>/<?=$name?>/account<?php endif ?>">General Settings</a>-->
-                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=account<?php else: ?>/<?=$name?>/account<?php endif ?>">Account Settings</a>
-                    <a class="dropdown-item" href="<?php if($goal==="show"): ?>/?page=create-group<?php else: ?>/<?=$name?>/create-group<?php endif ?>">Create Group</a>
+                    <!--<a class="dropdown-item" href="{% if (goal==="show") %}/?page=settings{% else %}/{{ name }}/account{% endif %}">General Settings</a>-->
+                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=account{% else %}/{{ name }}/account{% endif %}">Account Settings</a>
+                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group{% endif %}">Create Group</a>
                 </div>
             </li>
         </ul>
     </div>
     <div class="groups-controls">
         <div class="groups-notifications private-feature">
-            <graphjs-notifications target-profile="<?php if($goal==="show"): ?>/?page=profile&<?php else: ?>/<?=$name?>/profile?<?php endif ?>id=[[id]]" target-feed-item="<?php if($goal==="show"): ?>/?page=feed&<?php else: ?>/<?=$name?>/feed?<?php endif ?>id=[[id]]" target-messages="<?php if($goal==="show"): ?>/?page=messages<?php else: ?>/<?=$name?>/messages<?php endif ?>" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-notifications>
+            <graphjs-notifications target-profile="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" target-feed-item="{% if (goal==="show") %}/?page=feed&{% else %}/{{ name }}/feed?{% endif %}id=[[id]]" target-messages="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-notifications>
         </div>
-        <graphjs-auth target="<?php if($goal==="show"): ?>/?page=profile&<?php else: ?>/<?=$name?>/profile?<?php endif ?>id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
+        <graphjs-auth target="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
     </div>
 </nav>
 
-<?=$this->section('content')?>
+{% block content %}{% endblock %}
+
 <footer class="groups-footer footer mt-auto">
     <div class="container">
         <div class="row">
@@ -123,6 +129,6 @@
         //if(initiateSettings) initiateSettings();
     }
 </script>
-<?=$this->section('footer')?>
+{% block footer %}{% endblock %}
 </body>
 </html>

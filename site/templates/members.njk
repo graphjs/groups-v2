@@ -1,0 +1,9 @@
+{% set title = 'Members' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container">
+    <graphjs-profile-list target="{% if (goal === "show") %}/?page=profile&id=[[id]]{% else %}/{{ name }}/profile?id=[[id]]{% endif %}" box="disabled"></graphjs-profile-list>
+</main>
+{% endblock %}
+

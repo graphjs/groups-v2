@@ -1,0 +1,23 @@
+{% extends 'layout/base.njk' %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+
+<script>
+
+GraphJS.init('{{ public_id }}', {
+    host: '{{ host }}',
+    streamHost: '{{ stream_host }}',
+    streamId: '{{ public_id }}',
+    theme: {
+        primaryColor: '{{ primary_color }}',
+        textColor: '{{ text_color }}',
+        backgroundColor: '{{ background_color }}',
+    },
+});
+
+</script>
+
+{% endblock %}
+

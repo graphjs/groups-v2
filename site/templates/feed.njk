@@ -1,0 +1,14 @@
+{% set title = 'Feed' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid p-0 mt-0">
+    <graphjs-feed-item data-reference="feed" box="disabled"></graphjs-feed-item>
+</main>
+<script>
+    addAttributes('feed', [
+        'id' // The list of parameters attributed to tag
+    ]);
+</script>
+{% endblock %}
+

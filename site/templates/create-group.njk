@@ -1,0 +1,9 @@
+{% set title = 'Create Group' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid">
+    <graphjs-group-creator style="margin: 0 auto;" target="{% if (goal === "show") %}?page=group&id=[[id]]{% else %}/{{ name }}/group?id=[[id]]{% endif %}" box="disabled"></graphjs-group-creator>
+</main>
+{% endblock %}
+

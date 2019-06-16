@@ -1,0 +1,9 @@
+{% set title = 'Groups' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container">
+    <graphjs-group-list target="{% if (goal === "show") %}/?page=group&id=[[id]]{% else %}/{{ name }}/group?id=[[id]]{% endif %}" box="disabled"></graphjs-group-list>
+</main>
+{% endblock %}
+

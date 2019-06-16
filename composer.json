@@ -1,9 +1,0 @@
-{
-    "require": {
-        "league/plates": "^3.3",
-        "tholu/php-packer": "^0.2.0",
-        "nategood/commando": "^0.3.0",
-        "vlucas/phpdotenv": "^2.5",
-        "czproject/git-php": "^3.17"
-    }
-}

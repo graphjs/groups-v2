@@ -1,0 +1,14 @@
+{% set title = 'Profile' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid p-0 mt-0">
+    <graphjs-profile data-reference="profile" box="disabled"></graphjs-profile>
+</main>
+<script>
+    addAttributes('profile', [
+        'id' // The list of parameters attributed to tag
+    ]);
+</script>
+{% endblock %}
+

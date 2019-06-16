@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const cmd = require('commander');
+const FileGeneration = require('../lib/FileGeneration');
+
+const dir = path.dirname(__dirname) + '/site/templates';
+
+cmd.description('Generates static social network frontend');
+cmd.arguments('<name> <title>', 'Name');
+cmd.option('-d, --description, <description>', 'Group Description (may contain spaces or special chars)');
+cmd.option('-g, --git, <git>', 'Git Remote Url');
+cmd.option('-i, --id, <id>', 'GraphJS ID');
+cmd.option('-h, --host, <host>', 'GraphJS Server Hostname');
+cmd.option('-s, --stream_host, <stream_host>', 'Stream Server Hostname');
+cmd.option('-p, --primary_color, <primary_color>', 'Primary Color');
+cmd.option('-t, --text_color, <text_color>', 'Text Color');
+cmd.option('-b, --background_color, <background_color>', 'Background Color');
+cmd.option('-t, --theme, <theme>', 'Theme (light or dark)');
+cmd.option('-m, --modules, <modules>', 'List of extra modules to enable; forum, groups');
+cmd.option('-xh, --extra_head, <extra_head>', 'Extra code to inject in HEAD');
+
+let args = [];
+let name;
+let title;
+
+cmd.action(function (argName, argTitle) {
+    args = Array.from(arguments);
+    name = argName;
+    title = argTitle;
+});
+
+cmd.parse(process.argv);
+
+if (args.length === 0) {
+    console.error('ERROR: <name> and <title> must be specified');
+    process.exit(1);
+}
+
+const publicId = cmd.id || null;
+const theme = cmd.theme || 'light';
+const textColor = cmd.text_color || null;
+const backgroundColor = cmd.background_color || null;
+const primaryColor = cmd.primary_color || null;
+const host = cmd.host || null;
+const streamHost = cmd.stream_host || null;
+const description = (cmd.hasOwnProperty('description') && cmd.description) || '';
+const remoteUrl = cmd.git || '';
+const modules = cmd.modules.split(",") || '';
+const extraHead = (cmd.hasOwnProperty('extra_head') && cmd.description) || '';
+
+var moduleForum = "off";
+var moduleGroups = "off";
+
+for(let i=0;i<modules.length;i++) {
+    switch(modules[i].trim()) {
+        case "forum":
+            moduleForum = "on";
+            break;
+        case "groups":
+            moduleGroups = "on";
+            break;
+    }
+}
+
+(new FileGeneration(
+    dir, name, title, theme, publicId, primaryColor,
+    textColor, backgroundColor, host, streamHost,
+    remoteUrl, description, extraHead, moduleForum, moduleGroups
+)).generate().catch(function (error) {
+    console.error(error);
+});
+
