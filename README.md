@@ -2,7 +2,7 @@
 
 A simple static page generator for Grou.ps v2 sites. Based on https://github.com/phonetworks/grou-ps-v2/releases/tag/php
 
-Please note, this repo covers only the frontend components. For the backend, you need to install [GraphJS-Server](https://github.com/phonetworks/graphjs-server). GraphJS-Server can be run on your own servers, or it can be deployed in one-click to Heroku. For more information, check out [GraphJS-Server README](https://github.com/phonetworks/graphjs-server/blob/master/README.md) 
+Please note, this repo covers only the frontend components. For the backend, you need to install [GraphJS-Server](https://github.com/phonetworks/graphjs-server). GraphJS-Server can be run on your own servers, or it can be deployed in one-click to Heroku. For more information, check out [GraphJS-Server README](https://github.com/phonetworks/graphjs-server/blob/master/README.md) and/or this instructional video https://youtu.be/K7bWKlT0k_g
 
 ### Installation
 
