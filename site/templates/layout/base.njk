@@ -54,7 +54,7 @@
             <li class="nav-item{% if (title==="Members") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members{% endif %}">Members</a>
             </li>
-            {% if (module_forum==="on") %}
+            {% if (module_groups==="on") %}
             <li class="nav-item{% if (title==="Groups") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=groups{% else %}/{{ name }}/groups{% endif %}">Groups</a>
             </li>
@@ -77,7 +77,9 @@
                 <div class="dropdown-menu">
                     <!--<a class="dropdown-item" href="{% if (goal==="show") %}/?page=settings{% else %}/{{ name }}/account{% endif %}">General Settings</a>-->
                     <a class="dropdown-item" href="{% if (goal==="show") %}/?page=account{% else %}/{{ name }}/account{% endif %}">Account Settings</a>
+                    {% if (module_groups==="on") %}
                     <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group{% endif %}">Create Group</a>
+                    {% endif %}
                 </div>
             </li>
         </ul>
