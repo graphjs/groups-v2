@@ -117,11 +117,14 @@
 <script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
 <script>
+    var just_registered = false;
     window.onload = function() {
         // Login
         checkLogin();
         window.GraphJS.on("afterLogin", function() {
             checkLogin();
+            if(just_registered)
+                window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account{% endif %}";
         });
 
         window.GraphJS.on("afterLogout", function() {
@@ -129,7 +132,7 @@
         });
 
         window.GraphJS.on("afterRegister", function() {
-            window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account{% endif %}";
+            just_registered = true;
         })
         // Settings
         //if(initiateSettings) initiateSettings();

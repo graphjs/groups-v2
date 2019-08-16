@@ -18,7 +18,7 @@ module.exports = async function (req, res) {
     nunjucks.configure(__dirname + '/site/templates', { autoescape: true });
 
     const goal = 'show';
-    const publicId = query.public_id || '79982844-6a27-4b3b-b77f-419a79be0e10';
+    const publicId = 'CAA40AD1-8DF1-4E26-8ECF-CC32A8EAA8C7'; // query.public_id || 'CAA40AD1-8DF1-4E26-8ECF-CC32A8EAA8C7'; // || '79982844-6a27-4b3b-b77f-419a79be0e10';
     const primaryColor = '#6f879f';
     const textColor = '#3f5f7f';
     const backgroundColor = '#ffffff';
