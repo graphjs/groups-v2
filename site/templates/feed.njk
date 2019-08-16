@@ -3,7 +3,11 @@
 
 {% block content %}
 <main role="main" class="groups-content container-fluid p-0 mt-0">
-    <graphjs-feed-item data-reference="feed" box="disabled"></graphjs-feed-item>
+    <div class="row">
+        <section class="col-md-12 col-lg-8">
+            <graphjs-feed-item data-reference="feed" box="disabled"></graphjs-feed-item>
+        </section>
+    </div>
 </main>
 <script>
     addAttributes('feed', [

@@ -127,6 +127,10 @@
         window.GraphJS.on("afterLogout", function() {
             checkLogin();
         });
+
+        window.GraphJS.on("afterRegister", function() {
+            window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account{% endif %}";
+        })
         // Settings
         //if(initiateSettings) initiateSettings();
     }
