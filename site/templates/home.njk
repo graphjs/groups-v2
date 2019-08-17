@@ -5,7 +5,7 @@
 <main role="main" class="groups-content container">
 <div class="row">
     <section class="col-md-12 col-lg-8">
-        <graphjs-feed item-link="{% if (goal==="show") %}/?page=feed&id={% else %}/{{ name }}/feed?id={% endif %}"></graphjs-feed>
+        <graphjs-feed item-link-template="{% if (goal==="show") %}/?page=feed&id={% else %}/{{ name }}/feed?id={% endif %}"></graphjs-feed>
     </section>
     <aside class="groups-sidebar d-none d-lg-block col-lg-4">
 

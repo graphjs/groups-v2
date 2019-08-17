@@ -1,4 +1,6 @@
 const nunjucks = require('nunjucks');
+const dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = async function (req, res) {
     if(process.env.REDIRECT!=undefined) {
@@ -18,11 +20,11 @@ module.exports = async function (req, res) {
     nunjucks.configure(__dirname + '/site/templates', { autoescape: true });
 
     const goal = 'show';
-    const publicId = 'CAA40AD1-8DF1-4E26-8ECF-CC32A8EAA8C7'; // query.public_id || 'CAA40AD1-8DF1-4E26-8ECF-CC32A8EAA8C7'; // || '79982844-6a27-4b3b-b77f-419a79be0e10';
+    const publicId = process.env.PUBLIC_ID; 
     const primaryColor = '#6f879f';
     const textColor = '#3f5f7f';
     const backgroundColor = '#ffffff';
-    const host = "https://gjs-singlesignon.herokuapp.com";
+    const host = "https://accounts.groups2.com";
     const streamHost = "";
     const theme = "light";
     const moduleForum = "off";
