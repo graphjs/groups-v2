@@ -1,0 +1,48 @@
+{% set title = 'Network Administration' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid" onload="window.alert()">
+    <form class="groups-settings" id="network-administration">
+        <h3>Network Administration</h3>
+        <br />
+        <!--
+        <div class="form-group">
+            <label>Show contents to people who are not a member of the network?</label>
+            <input id="network_is_open" type="checkbox" class="theme groups-input switch form-control">
+        </div>
+        -->
+        <div class="alert alert-success d-none" role="alert">
+            Success! Onward and upward.
+        </div>
+        <div class="alert alert-danger d-none" role="alert">
+            There was a problem saving! Please check your password or try again later.
+        </div>
+        <div class="form-group">
+            <label>Require administration approval before a person becomes a member of the network?</label>
+            <input id="network_is_public" type="checkbox" class="theme groups-input switch form-control">
+        </div>
+        <div class="form-group">
+            <label>Let any member post content? If unchecked, membership will be read-only.</label>
+            <input id="network_let_anyone_post" type="checkbox" class="theme groups-input switch form-control">
+        </div>
+        <button id="save-button" type="button" class="btn btn-secondary" onclick="saveNetworkAdministration()">Save</button>
+        <button id="loading-button" class="btn btn-secondary d-none" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+        <p>&nbsp;</p>
+        <p><small>⚠️ For more settings, go to https://grou.ps or tune it in HTML.</small></p>
+    </form>
+</main>
+
+<script type="text/javascript" src="/site/scripts/minajax.js"></script>
+<script type="text/javascript" src="/site/scripts/md5.js"></script>
+<script type="text/javascript" src="/site/scripts/network-administration.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+    loadNetworkSettings();
+});
+</script>
+{% endblock %}
+

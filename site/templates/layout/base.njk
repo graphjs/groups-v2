@@ -139,7 +139,7 @@
             just_registered = true;
         })
 
-        dialogPolyfill.registerDialog();
+        dialogPolyfill.registerDialog(document.getElementsByTagName("dialog")[0]);
         // Settings
         //if(initiateSettings) initiateSettings();
     }

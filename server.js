@@ -22,6 +22,7 @@ app.use(morgan('combined', {
 
 app.get('/', asyncMiddleware(require('./index')));
 app.get('/generate', asyncMiddleware(require('./generate/index')));
+app.use('/site/components', express.static('site/components'));
 app.use('/site/vendor', express.static('site/vendor'));
 app.use('/site/scripts', express.static('site/scripts'));
 app.use('/site/styles', express.static('site/styles'));

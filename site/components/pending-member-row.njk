@@ -1,0 +1,19 @@
+<tr key={index}  id="member-{{member.id}}">
+                                <td>
+                                    <a href="javascript:void()" onclick="GraphJS.showProfile({id:'{{member.id}}'})">
+                                    <img src="{% if member.avatar %} {{member.avatar}} {% else %}https://raw.githubusercontent.com/phonetworks/graphjs/master/static/user.png{% endif %}" class="rounded-circle" style="height:30px;width:30px;">
+                                    {{member.username}}
+                                    </a>
+
+                                </td>
+                                <td>
+                                    
+                                    {{member.signup_time}}
+                                    
+
+                                </td>
+                                <td>
+                                     <button type="button" class="btn btn-secondary"  onClick="acceptPendingMember('{{member.id}}')">Accept</button>
+                                     <button type="button" class="btn btn-danger"  onClick="rejectPendingMember('{{member.id}}')">Reject</button>
+                                </td>
+                            </tr>

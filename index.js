@@ -27,8 +27,8 @@ module.exports = async function (req, res) {
     const host = "https://accounts.groups2.com";
     const streamHost = "";
     const theme = "light";
-    const moduleForum = "off";
-    const moduleGroups = "off";
+    const moduleForum = query.module_forum || "off";
+    const moduleGroups = query.module_groups ||"off";
     const extraHead = "";
     
     let page = query.page;

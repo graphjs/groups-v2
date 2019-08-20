@@ -1,0 +1,30 @@
+{% set title = 'Pending Members' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid" onload="window.alert()">
+<h3>Pending Members</h3>
+    <table id="members-list" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+</main>
+
+<script type="text/javascript" src="/site/vendor/nunjucks/nunjucks.min.js"></script>
+<script type="text/javascript" src="/site/scripts/minajax.js"></script>
+<script type="text/javascript" src="/site/scripts/md5.js"></script>
+<script type="text/javascript" src="/site/scripts/pending-members.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+    loadPendingMembersTable();
+});
+</script>
+{% endblock %}
+

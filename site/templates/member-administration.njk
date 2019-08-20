@@ -1,0 +1,29 @@
+{% set title = 'Network Administration' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+<main role="main" class="groups-content container-fluid" onload="window.alert()">
+<h3>Member Administration</h3>
+    <table id="members-list" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+</main>
+
+<script type="text/javascript" src="/site/vendor/nunjucks/nunjucks.min.js"></script>
+<script type="text/javascript" src="/site/scripts/minajax.js"></script>
+<script type="text/javascript" src="/site/scripts/md5.js"></script>
+<script type="text/javascript" src="/site/scripts/member-administration.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+    loadMemberAdministrationTable();
+});
+</script>
+{% endblock %}
+
