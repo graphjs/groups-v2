@@ -81,8 +81,11 @@
                     <!--<a class="dropdown-item" href="{% if (goal==="show") %}/?page=settings{% else %}/{{ name }}/account{% endif %}">General Settings</a>-->
                     <a class="dropdown-item" href="{% if (goal==="show") %}/?page=account{% else %}/{{ name }}/account{% endif %}">Account Settings</a>
                     {% if (module_groups==="on") %}
-                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group{% endif %}">Create Group</a>
+                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group{% endif %}">Create Group...</a>
                     {% endif %}
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=network-administration{% else %}/{{ name }}/network-administration{% endif %}">Network Administration</a>
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=member-administration{% else %}/{{ name }}/member-administration{% endif %}">Member Administration</a>
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=pending-members{% else %}/{{ name }}/pending-members{% endif %}">Pending Members</a>
                 </div>
             </li>
         </ul>
@@ -122,17 +125,22 @@
 <script type="text/javascript" src="/site/vendor/dialog-polyfill/dialog-polyfill.js"></script>
 <script>
     var just_registered = false;
+    
     window.onload = function() {
         // Login
         checkLogin();
-        window.GraphJS.on("afterLogin", function() {
+        window.GraphJS.on("afterLogin", function(params, response) {
+            localStorage.setItem("username", params[0]);
             checkLogin();
+            showAdministrationOptions();
             if(just_registered)
                 window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account{% endif %}";
         });
 
         window.GraphJS.on("afterLogout", function() {
             checkLogin();
+            localStorage.setItem("username", "");
+            document.body.classList.remove("admin");
         });
 
         window.GraphJS.on("afterRegister", function() {
@@ -140,6 +148,8 @@
         })
 
         dialogPolyfill.registerDialog(document.getElementsByTagName("dialog")[0]);
+        
+        showAdministrationOptions();
         // Settings
         //if(initiateSettings) initiateSettings();
     }

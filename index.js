@@ -24,11 +24,11 @@ module.exports = async function (req, res) {
     const primaryColor = '#6f879f';
     const textColor = '#3f5f7f';
     const backgroundColor = '#ffffff';
-    const host = "https://accounts.groups2.com";
+    const host = process.env.HOST || "https://accounts.groups2.com";
     const streamHost = "";
     const theme = "light";
-    const moduleForum = query.module_forum || "off";
-    const moduleGroups = query.module_groups ||"off";
+    const moduleForum = process.env.MODULE_FORUM ||query.module_forum || "off";
+    const moduleGroups = process.env.MODULE_GROUPS ||query.module_groups ||"off";
     const extraHead = "";
     
     let page = query.page;

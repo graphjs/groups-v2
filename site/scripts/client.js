@@ -2,13 +2,24 @@
 	 This script file contains functions that work product-wide.
 */
 
+var showAdministrationOptions = function() {
+    if (localStorage.getItem("username")=="admin") {
+        document.body.classList.add("admin");
+    }
+    else {
+        document.body.classList.remove("admin");
+    }
+};
+
 var checkLogin = function() {
     window.GraphJS.getSession(function(response) {
         if(response.success) {
             document.body.classList.add('logged');
+            showAdministrationOptions();
         }
         else {
             document.body.classList.remove('logged');
+            document.body.classList.remove("admin");
         }
     });
 }

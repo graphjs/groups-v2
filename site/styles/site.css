@@ -287,3 +287,11 @@ body.logged .private-feature {
 body.logged .public-feature {
     display: none;
 }
+
+.admin-feature {
+    display: none;
+}
+
+body.admin .admin-feature {
+    display: block;
+}

@@ -97,6 +97,18 @@ function setEditor(id, mode)
             data = JSON.parse(data);
             if(data.success)
             {
+                switch(mode)
+                {
+                    case 1:
+                            $("#grant-"+id).addClass('d-none');
+                            $("#revoke-"+id).removeClass('d-none');
+                        
+                        break;
+                    default:
+                            $("#grant-"+id).removeClass('d-none');
+                            $("#revoke-"+id).addClass('d-none');
+                        break;
+                }
                 // do something in the UI
                 alert("Success");
                 return;

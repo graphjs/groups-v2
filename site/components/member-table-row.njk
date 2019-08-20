@@ -9,9 +9,11 @@
                                 <td>
                                             {% if member.username !== 'admin' %}
                                             {% if member.is_editor === 1 %}
-                                                <button type="button" class="btn btn-secondary"  onClick="setEditor('{{member.id}}', 0)">Revoke Editor Privileges</button>
+                                                <button id="revoke-{{member.id}}" type="button" class="btn btn-secondary"  onClick="setEditor('{{member.id}}', 0)">Revoke Editor Privileges</button>
+                                                <button  id="grant-{{member.id}}" type="button" class="btn btn-secondary d-none" onClick="setEditor('{{member.id}}', 1)">Grant Editor Privileges</button>
                                             {% else %}
-                                                <button type="button" class="btn btn-secondary" onClick="setEditor('{{member.id}}', 1)">Grant Editor Privileges</button>
+                                                <button  id="revoke-{{member.id}}" type="button" class="btn btn-secondary d-none"  onClick="setEditor('{{member.id}}', 0)">Revoke Editor Privileges</button>
+                                                <button  id="grant-{{member.id}}" type="button" class="btn btn-secondary" onClick="setEditor('{{member.id}}', 1)">Grant Editor Privileges</button>
                                            {% endif %}
                                            {% endif %}
 

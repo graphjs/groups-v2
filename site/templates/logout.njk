@@ -1,0 +1,18 @@
+{% set title = 'Logout' %}
+{% extends 'layout/template_' + goal + '.njk' %}
+
+{% block content %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+    GraphJS.logout(function(res) {
+        console.log(res);
+        window.location.href = 
+            {% if (goal === "show") %}"/?page=home"{% else %}"/"{% endif %}
+        ;
+    });
+});
+</script>
+
+
+{% endblock %}
