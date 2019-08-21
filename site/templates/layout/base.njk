@@ -17,8 +17,6 @@
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-offcanvas.css" />
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-navbar.css" />
     <link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap-sticky-footer.css" />
-    <!-- Dialog Polyfill -->
-    <link rel="stylesheet" type="text/css" href="/site/vendor/dialog-polyfill/dialog-polyfill.css" />
     <!-- Site layout & essentials -->
     <link rel="stylesheet" type="text/css" href="/site/styles/site.css" />
     <!-- User Interface components -->
@@ -34,7 +32,22 @@
     {{ extra_head|safe }}
 </head>
 <body class="{{ theme }}" style="color: {{ text_color }}">
-<dialog></dialog>
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Share...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="modal-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Navigation -->
 <nav style="background-color: {{ primary_color }}" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
     <a class="groups-brand navbar-brand d-none d-md-block" href="{% if (goal === "show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">
@@ -122,7 +135,6 @@
 <script type="text/javascript" src="/site/vendor/popper/popper.min.js"></script>
 <script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="/site/vendor/graphjs/graph.js"></script>
-<script type="text/javascript" src="/site/vendor/dialog-polyfill/dialog-polyfill.js"></script>
 <script>
     var just_registered = false;
     
@@ -145,9 +157,7 @@
 
         window.GraphJS.on("afterRegister", function() {
             just_registered = true;
-        })
-
-        dialogPolyfill.registerDialog(document.getElementsByTagName("dialog")[0]);
+        });
         
         showAdministrationOptions();
         // Settings
