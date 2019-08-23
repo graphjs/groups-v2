@@ -30,7 +30,13 @@ where:
 
 Your site will be generated under `dist/{group_name}` ready to be served statically.
 
-You may follow the steps shown at https://pages.github.com/ to host your site on Github for free.
+Alternatively, you may generate a dynamic site by typing:
+
+```sh
+node server
+```
+
+but this is not the recommended way to run your site, it is good for preview only. You would need to create a .env file in the root of the installation; check out .env.example to see what values are required for the .env file. Then, the network can be displayed in a browser at the address http://127.0.0.1:8000/?page=home (with default settings.)
 
 ### License
 
