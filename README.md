@@ -2,6 +2,7 @@
 
 A simple static page generator for Grou.ps v2 sites. 
 
+Grou.ps v2 is a micro social networking platform for people to connect around shared interests and affiliations. You may take a quick look at the platform and its capabilities at https://www.youtube.com/watch?v=RhGsK7I5EkI
 
 
 ### Installation
