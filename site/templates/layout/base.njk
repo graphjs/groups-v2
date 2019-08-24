@@ -158,6 +158,12 @@
         window.GraphJS.on("afterRegister", function() {
             just_registered = true;
         });
+
+        window.GraphJS.on("inactive", function() {
+            $(".modal-title") = "Warning";
+			$("#modal-text").html("This instance is inactive. If you are the admin, please go to <a href='https://groups2.com' target='_blank'>https://grou.ps</a> to reactivate");
+			$(".modal").modal();
+        });
         
         showAdministrationOptions();
         // Settings
