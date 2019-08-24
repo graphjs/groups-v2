@@ -1,8 +1,9 @@
 ## Grou.ps v2
 
-A simple static page generator for Grou.ps v2 sites. Based on https://github.com/phonetworks/grou-ps-v2/releases/tag/php
+A simple static page generator for Grou.ps v2 sites. 
 
-Please note, this repo covers only the frontend components. For the backend, you need to install [GraphJS-Server](https://github.com/phonetworks/graphjs-server). GraphJS-Server can be run on your own servers, or it can be deployed in one-click to Heroku. For more information, check out [GraphJS-Server README](https://github.com/phonetworks/graphjs-server/blob/master/README.md) and/or this instructional video https://youtu.be/K7bWKlT0k_g
+Grou.ps v2 is a micro social networking platform for people to connect around shared interests and affiliations. You may take a quick look at the platform and its capabilities at https://www.youtube.com/watch?v=RhGsK7I5EkI
+
 
 ### Installation
 
@@ -11,6 +12,8 @@ For getting started, you just need to install the Node dependencies using [NPM](
 ```sh
 npm install
 ```
+
+Please note, this repo covers only the frontend components. For the backend, you need to install [GraphJS-Server](https://github.com/phonetworks/graphjs-server). GraphJS-Server can be run on your own servers, or it can be deployed in one-click to Heroku. For more information, check out [GraphJS-Server README](https://github.com/phonetworks/graphjs-server/blob/master/README.md) and/or this instructional video https://youtu.be/K7bWKlT0k_g
 
 
 ### Usage
@@ -28,7 +31,13 @@ where:
 
 Your site will be generated under `dist/{group_name}` ready to be served statically.
 
-You may follow the steps shown at https://pages.github.com/ to host your site on Github for free.
+Alternatively, you may generate a dynamic site by typing:
+
+```sh
+node server
+```
+
+but this is not the recommended way to run your site, it is good for preview only. You would need to create a .env file in the root of the installation; check out .env.example to see what values are required for the .env file. Then, the network can be displayed in a browser at the address http://127.0.0.1:8000/?page=home (with default settings.)
 
 ### License
 
