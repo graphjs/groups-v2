@@ -12,7 +12,7 @@ function loadMemberAdministrationTable()
         //console.log("begin");
         var env = new nunjucks.Environment(new nunjucks.WebLoader('/site/components'));
         var template = env.getTemplate('member-table-row.njk');
-        let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+        let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; 
         let graphjs_id = GraphJSConfig.id;
         var members = [];
         minAjax({
@@ -49,7 +49,7 @@ function kickMember(id)
         return;
     let hash = getHash();
     if(hash=="") return;
-    let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+    let network = GraphJSConfig.host; /// "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
     let graphjs_id = GraphJSConfig.id;
     minAjax({
         url: network+"/deleteMember",
@@ -81,7 +81,7 @@ function setEditor(id, mode)
 {
     let hash = getHash();
     if(hash=="") return;
-    let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+    let network = GraphJSConfig.host; ///"https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
     let graphjs_id = GraphJSConfig.id;
     minAjax({
         url: network+"/setBlogEditor",

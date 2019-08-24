@@ -4,7 +4,7 @@
 
 function loadNetworkSettings()
 {
-        let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+        let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
         let graphjs_id = GraphJSConfig.id;
         minAjax({
             url: network+"/getAllModes",
@@ -38,7 +38,7 @@ function saveNetworkAdministration()
     // let is_open = $("#network_is_open")[0].checked;
     let is_public = $("#network_is_public")[0].checked ? 1 : 0;
     let is_readonly = !$("#network_let_anyone_post")[0].checked ? 1 : 0;
-    let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+    let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
     let graphjs_id = GraphJSConfig.id;
     console.log("about to query");
     minAjax({
