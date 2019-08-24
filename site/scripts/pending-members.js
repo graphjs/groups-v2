@@ -14,7 +14,7 @@ function loadPendingMembersTable()
         if(hash=="") return;
         var env = new nunjucks.Environment(new nunjucks.WebLoader('/site/components'));
         var template = env.getTemplate('pending-member-row.njk');
-        let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+        let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
         let graphjs_id = GraphJSConfig.id;
         var members = [];
         minAjax({
@@ -51,7 +51,7 @@ function acceptPendingMember(id)
 {
     let hash = getHash();
     if(hash=="") return;
-    let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+    let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
     let graphjs_id = GraphJSConfig.id;
     minAjax({
         url: network+"/approveMembership",
@@ -84,7 +84,7 @@ function rejectPendingMember(id)
     console.log("hello");
     let hash = getHash();
     if(hash=="") return;
-    let network = "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
+    let network = GraphJSConfig.host; // "https://accounts-dev.graphjs.com"; // GraphJSConfig.host;
     let graphjs_id = GraphJSConfig.id;
     minAjax({
         url: network+"/deleteMember",
