@@ -52,7 +52,8 @@ module.exports = async function (req, res) {
                 theme,
                 stream_host: streamHost,
                 module_forum: moduleForum,
-                module_groups: moduleGroups
+                module_groups: moduleGroups,
+                engine: "groupsville"
             }
         )
     );
