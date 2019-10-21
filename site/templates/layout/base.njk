@@ -80,6 +80,9 @@
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=forum{% else %}/{{ name }}/forum{% endif %}">Forum</a>
             </li>
             {% endif %}
+            <li class="nav-item{% if (title==="Video Chat") %} active{% endif %}">
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=videochat{% else %}/{{ name }}/videochat{% endif %}">Video Chat</a>
+            </li>
             <li class="nav-item{% if (title==="Messages") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}">Inbox</a>
             </li>
