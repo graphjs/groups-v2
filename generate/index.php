@@ -27,6 +27,10 @@ $host = $_REQUEST['host'] ?? null;
 $stream_host = $_REQUEST['stream_host'] ?? null;
 $secret = $_REQUEST['secret'] ?? null;
 $regen = $_REQUEST['regen'] ?? false;
+$module_forum = $_REQUEST['module_forum'] ?? false; 
+$module_groups = $_REQUEST['module_groups'] ?? false;
+$extra_head = $_REQUEST['extra_head'] ?? ""; 
+$engine = $_REQUEST['engine'] ?? ""; 
 
     if (! $name || ! $title || !$public_id) {
         header('Content-Type: application/json');
@@ -61,7 +65,8 @@ $regen = $_REQUEST['regen'] ?? false;
     // actual file generation takes place here.
     (new FileGeneration(
             $dir, $name, $title, $theme, $public_id, $primary_color,
-            $text_color, $background_color, $host, $stream_host, $remote_url, $description
+            $text_color, $background_color, $host, $stream_host, $remote_url, $description,
+            $extra_head, $module_forum, $module_groups, $engine
         )
     )->generate($regen);
 
