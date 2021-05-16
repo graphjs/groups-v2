@@ -1,8 +1,8 @@
-## Grou.ps v2
+## Groupsville
 
-A simple static page generator for Grou.ps v2 sites. 
+A simple static page generator for Groupsville sites. 
 
-Grou.ps v2 is a micro social networking platform for people to connect around shared interests and affiliations. You may take a quick look at the platform and its capabilities at https://www.youtube.com/watch?v=RhGsK7I5EkI
+Groupsville is a micro social networking platform for people to connect around shared interests and affiliations. You may take a quick look at the platform and its capabilities at https://www.youtube.com/watch?v=RhGsK7I5EkI
 
 
 ### Installation
@@ -18,7 +18,7 @@ Please note, this repo covers only the frontend components. For the backend, you
 
 ### Usage
 
-To generate a Grou.ps site, type in:
+To generate a Groupsville site, type in:
 
 ```sh
 bin/generate {group_name} {group_title} --id {public_graphjs_id}
